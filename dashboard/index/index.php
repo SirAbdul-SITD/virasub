@@ -1026,7 +1026,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         <h5 class="card-title">WhatsApp Customer Support</h5>
                         <p class="card-text">Have questions or need assistance? Reach out to our customer support on
                           WhatsApp.</p>
-                        <a href="https://wa.me/message/7DLSZTSVXO7QH1" target="_blank" class="btn btn-warning"
+                        <a href="https://wa.me/message/MPIMCPUUGT3WK1" target="_blank" class="btn btn-warning"
                           style="background-color: #fb9149;">
                           <i class='bx bxl-whatsapp'></i> Chat Now
                         </a>

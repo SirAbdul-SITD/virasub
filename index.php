@@ -915,7 +915,7 @@
   </script>
   <!-- Payment model -->
 
-  <a id="whatsapp-button" href="https://wa.me/message/7DLSZTSVXO7QH1" target="_blank">
+  <a id="whatsapp-button" href="https://wa.me/message/MPIMCPUUGT3WK1" target="_blank">
     Chat on WhatsApp
   </a>
 
