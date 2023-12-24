@@ -13,9 +13,9 @@ session_start();
 // error_reporting(E_ALL);
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database = "utility";
+$username = "virasubc_virasub";
+$password = "T.gxMx)md)UO{)D]Id";
+$database = "virasubc_virasub";
 
 try {
   $pdo = new PDO("mysql:host=$servername;dbname=$database;charset=utf8", $username, $password);

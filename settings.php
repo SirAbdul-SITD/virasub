@@ -8,9 +8,9 @@ session_start();
 
 
 $servername = "localhost";
-$username = "mytvglow_virasub";
-$password = "VYIhLghDd,m@4NxDmW";
-$database = "mytvglow_virasub";
+$username = "virasubc_virasub";
+$password = "T.gxMx)md)UO{)D]Id";
+$database = "virasubc_virasub";
 
 
 // $servername = "localhost";

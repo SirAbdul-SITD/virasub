@@ -15,11 +15,10 @@ session_start();
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-
 $servername = "localhost";
-$username = "mytvglow_virasub";
-$password = "VYIhLghDd,m@4NxDmW";
-$database = "5818e31a-e120-4dab-ae4d-4ea85840b0a5";
+$username = "virasubc_virasub";
+$password = "T.gxMx)md)UO{)D]Id";
+$database = "virasubc_virasub";
 
 
 // $servername = "localhost";
