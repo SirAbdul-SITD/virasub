@@ -20,7 +20,7 @@ try {
     $fullAmount = $amount + 50;
 
     // Your secret key
-    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
+    $secret_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; // Replace with actual email
@@ -68,7 +68,7 @@ try {
         "meta" => $meta,
         "customer" => $customer,
         "customizations" => $customizations,
-        "payload_hash" => $payload_hash, // Include the payload hash here
+        // "payload_hash" => $payload_hash, // Include the payload hash here
     );
 
     $paymentPayloadJson = json_encode($paymentPayload);
