@@ -132,7 +132,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" data-navbar-on-scroll="data-navbar-on-scroll">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center align-content-center fw-bold fs-2" href="index.html">
-          <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
+        <div style="color: #fb9149">V</div>
           <div style="color: #14a39a;">ira</div>
           <div style="color: #fb9149">S</div>
           <div style="color: #14a39a;">ub</div>
@@ -511,7 +511,7 @@
         <div class="row flex-center">
           <div class="col-auto mb-5"><a class="pe-2 d-flex align-items-center text-decoration-none fw-bold fs-3"
               href="#">
-              <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
+              <div style="color: #fb9149">V</div>
               <div style="color: #14a39a;">ira</div>
               <div style="color: #fb9149">S</div>
               <div style="color: #14a39a;">ub</div>
