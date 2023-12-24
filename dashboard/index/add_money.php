@@ -20,7 +20,7 @@ try {
     $fullAmount = $amount + 50;
 
     // Your secret key
-    $secret_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
+    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; // Replace with actual email
@@ -32,9 +32,9 @@ try {
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
+    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
     $currency = "NGN";
-    $payment_options = "ussd, card";
+    $payment_options = "ussd, card, banktransfer, account";
     $redirect_url = "fund_wallet.php";
     $logo = "https://virasub.demo.edurelm.site/index/favlogo.png";
     $title = "ViraSub";
