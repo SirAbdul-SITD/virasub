@@ -35,7 +35,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
       $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
       $updateStmt->execute();
 
-      $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
+      $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
       $subject = "New Balance Deposit";
   
       $message = "A User Just Added Funds To Their Wallet:\n\n";
@@ -49,7 +49,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
       mail($to, $subject, $message, $headers);
     
   } else {
-    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
+    $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "Balance Deposit Error";
 
     $message = "An error occurred during a wallet funding:\n\n";

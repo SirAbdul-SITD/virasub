@@ -16,6 +16,9 @@ try {
         throw new Exception("Invalid amount! [err_code: #8923]");
     }
 
+
+    $fullAmount = $amount + 50;
+
     // Your secret key
     $secret_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
 
@@ -24,7 +27,7 @@ try {
     $tx_ref = 'Funds_' . uniqid(); // Replace with actual reference
 
     // Concatenate values for hashing
-    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $secret_key;
+    $string_to_be_hashed = $fullAmount . $currency . $customer_email . $tx_ref . $secret_key;
 
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
@@ -55,7 +58,7 @@ try {
     $paymentPayload = array(
         "public_key" => $public_key,
         "tx_ref" => $tx_ref,
-        "amount" => $amount,
+        "amount" => $fullAmount,
         "currency" => $currency,
         "payment_options" => $payment_options,
         "redirect_url" => $redirect_url,
@@ -75,7 +78,7 @@ header('Content-Type: application/json');
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $fullAmount, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();

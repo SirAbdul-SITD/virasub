@@ -25,7 +25,8 @@ try {
     }
 
     // Your secret key
-    $secret_key = "FLWPUBK_TEST-8b73fb44697a1a195ad664f5b9497275-X";
+    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
+
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; 
@@ -38,7 +39,7 @@ try {
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
+    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;

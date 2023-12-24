@@ -18,19 +18,21 @@ try {
     }
 
     // Your secret key
-    $secret_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
+    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
 
     // Retrieve other necessary data from your preferred data store
-    $customer_email = $user_email; // Replace with actual email
-    $tx_ref = 'Funds_' . uniqid(); // Replace with actual reference
+    $customer_email = $user_email; 
+    $tx_ref = 'Funds_' . uniqid(); 
+
+    $fullAmount = $amount + 50;
 
     // Concatenate values for hashing
-    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $secret_key;
+    $string_to_be_hashed = $fullAmount . $currency . $customer_email . $tx_ref . $secret_key;
 
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
+    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
@@ -57,7 +59,7 @@ try {
     $paymentPayload = array(
         "public_key" => $public_key,
         "tx_ref" => $tx_ref,
-        "amount" => $amount,
+        "amount" => $fullAmount,
         "currency" => $currency,
         "payment_options" => $payment_options,
         "redirect_url" => $redirect_url,
@@ -78,7 +80,7 @@ try {
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $fullAmount, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();

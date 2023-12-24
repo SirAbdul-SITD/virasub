@@ -156,7 +156,7 @@ try {
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $headers = [
-      "Authorization: Token 7d2ba8138c02d5ad579285dc645ff10d1c2630a9f3cbee50db293abdbcf0",
+      "Authorization: Token c9518a8f3a778f1524c26830f96f14c6474c0ac30438c18de6aa09a47831",
       'Content-Type: application/json'
     ];
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);

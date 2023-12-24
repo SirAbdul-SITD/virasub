@@ -78,7 +78,7 @@ if ($row) {
 
 function sendErrorEmailToAdmin($errorMessage)
 {
-    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
+    $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "API Request Error";
 
     $message = "An error occurred during a request:\n\n";
@@ -91,7 +91,7 @@ function sendErrorEmailToAdmin($errorMessage)
 }
 function sendErrorEmailToManagement($message)
 {
-    $to = "sirabdul@nijamart.ng, support@virasub.com.ng, emmyblaq784@gmail.com";
+    $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "API Request Error";
 
     $message = "An error occurred during the API request:\n\n";
@@ -104,7 +104,7 @@ function sendErrorEmailToManagement($message)
 }
 function securityBridged($email)
 {
-    $to = "sirabdul@nijamart.ng";
+    $to = "abdulkarimhussain7@gmail.com";
     $subject = "Critical security issue";
 
     $message = "Security Issues Detected!";
@@ -118,7 +118,7 @@ function securityBridged($email)
 
 function newAirtimeTransaction($status, $networkName, $requestId, $profit, $message, $phoneNumber, $oldBalance, $newBalance, $system, $planType, $walletVending)
 {
-  $to = "sirabdul@nijamart.ng, support@virasub.com.ng, emmyblaq784@gmail.com";
+  $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "New Transaction";
 
     $message = "A new transaction was successfully completed:\n\n";
@@ -142,7 +142,7 @@ function newAirtimeTransaction($status, $networkName, $requestId, $profit, $mess
 
 function newDataTransaction($status, $networkName, $requestId, $profit, $message, $dataplan, $phoneNumber, $oldBalance, $newBalance, $system, $planType, $walletVending)
 {
-  $to = "sirabdul@nijamart.ng, support@virasub.com.ng, emmyblaq784@gmail.com";
+  $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "New Transaction";
 
     $message = "A new transaction was successfully completed:\n\n";
