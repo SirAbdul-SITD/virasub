@@ -392,8 +392,10 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                                 error: function (xhr, status, error) {
                                   $("#loadingScreen").hide();
                                 
-                                  document.getElementById("status_report").innerText = "Error: Couldn't complete your request at the moment, Please check your internet connection and try again, If issue persists try again in in 30 minutes. [err_code: #8704]";
+                                  document.getElementById("status_report").innerText = xhr, status, error;
                                   $('#modelError').modal('show');
+
+                                  console.log(xhr, status, error);
 
                                 }
                               });
