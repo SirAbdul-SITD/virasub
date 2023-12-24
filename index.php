@@ -101,22 +101,22 @@
 
 
     #whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 9999;
-        }
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 9999;
+    }
 
-        #whatsapp-button:hover {
-            background-color: #14a39a;
-            text-decoration: none;
-        }
+    #whatsapp-button:hover {
+      background-color: #14a39a;
+      text-decoration: none;
+    }
   </style>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -132,7 +132,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" data-navbar-on-scroll="data-navbar-on-scroll">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center align-content-center fw-bold fs-2" href="index.html">
-        <div style="color: #fb9149">V</div>
+          <div style="color: #fb9149">V</div>
           <div style="color: #14a39a;">ira</div>
           <div style="color: #fb9149">S</div>
           <div style="color: #14a39a;">ub</div>
@@ -142,15 +142,20 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
-            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium active" aria-current="page"
-                href="#home">Home</a></li>
-            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#features">Key
+            <!-- Add a class 'nav-link-click' to each navigation link -->
+            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium active nav-link-click"
+                aria-current="page" href="#home">Home</a></li>
+            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium nav-link-click"
+                href="#features">Key
                 Features</a></li>
-            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#whyUs">Why Us</a>
+            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium nav-link-click"
+                href="#whyUs">Why Us</a>
             </li>
-            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#pricing">Pricing</a>
+            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium nav-link-click"
+                href="#pricing">Pricing</a>
             </li>
-            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#instant">Instant
+            <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium nav-link-click"
+                href="#instant">Instant
                 Buy</a></li>
           </ul>
           <form class="ps-lg-5" action="https://virasub.com.ng/dashboard/index/auth/signup.php">
@@ -160,6 +165,15 @@
         </div>
       </div>
     </nav>
+    <script>
+      $(document).ready(function () {
+        // Add click event listener to each navigation link with class 'nav-link-click'
+        $('.nav-link-click').on('click', function () {
+          // Close the collapsed navbar
+          $('.navbar-collapse').collapse('hide');
+        });
+      });
+    </script>
     <section class="py-0" id="home">
       <div class="bg-holder"
         style="background-image:url(assets/img/illustrations/hero-bg.png);background-position:bottom;background-size:cover;">
@@ -221,7 +235,8 @@
               bill payments. Simplify your transactions and enjoy the convenience of secure and reliable services.</p><a
               class="btn btn-lg  rounded-pill hover-top" href="#instant" role="button"
               style="color: white; background-color:#14a39a">Instant Purchase</a><a class="btn btn-link ps-md-4"
-              href="https://virasub.com.ng/dashboard/index/auth/signup.php" role="button" style="text-decoration: none; color: #fb9149; font-weight: bolder"> SignUp</a>
+              href="https://virasub.com.ng/dashboard/index/auth/signup.php" role="button"
+              style="text-decoration: none; color: #fb9149; font-weight: bolder"> SignUp</a>
           </div>
           <div class="col-md-5 col-lg-6 order-md-1 text-center text-md-end"><img class="img-fluid"
               src="Transaction0.png" width="350" alt="" /></div>
@@ -388,8 +403,8 @@
 
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-5 order-md-0 text-center text-md-start"><img class="img-fluid mb-4"
-              src="Transaction1.png" width="550" alt="" /></div>
+          <div class="col-md-5 order-md-0 text-center text-md-start"><img class="img-fluid mb-4" src="Transaction1.png"
+              width="550" alt="" /></div>
           <div class="col-md-6 text-center text-md-start offset-md-1">
             <h6 class="fw-bold fs-4 display-3 lh-sm">Tailored Pricing<br />all for you</h6>
             <p class="my-4 pe-xl-5">Take control of your resources while benefiting from a professionally designed
@@ -901,8 +916,8 @@
   <!-- Payment model -->
 
   <a id="whatsapp-button" href="https://wa.me/message/7DLSZTSVXO7QH1" target="_blank">
-        Chat on WhatsApp
-    </a>
+    Chat on WhatsApp
+  </a>
 
 </body>
 
