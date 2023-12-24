@@ -66,7 +66,7 @@ if (isset($_SESSION['email'])) {
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Login | Billzwave</title>
+  <title>Login | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -150,7 +150,7 @@ if (isset($_SESSION['email'])) {
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Greetings from Billzwave! 👋</h4>
+            <h4 class="mb-2">Greetings from ViraSub! 👋</h4>
             <p class="mb-4">Kindly log in to your account to proceed with the adventure.</p>
 
             <form id="signin-form" class="mb-3" method="POST">

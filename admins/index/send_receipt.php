@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 
         
                 $to = $email;
-                $subject = "Receipt from Billzwave";
+                $subject = "Receipt from ViraSub";
                 $message = file_get_contents("send_receipt_airtime.html");
                 $message = str_replace("{email}", $email, $message);
                 $message = str_replace("{trx_ref}", $trx_ref, $message);
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
 
                 
                 $to = $email;
-                $subject = "Receipt from Billzwave";
+                $subject = "Receipt from ViraSub";
                 $message = file_get_contents("send_receipt_data.html");
                 $message = str_replace("{email}", $email, $message);
                 $message = str_replace("{trx_ref}", $trx_ref, $message);
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
         
                 
                 $to = $email;
-                $subject = "Receipt from Billzwave";
+                $subject = "Receipt from ViraSub";
                 $message = file_get_contents("send_receipt_cable.html");
                 $message = str_replace("{email}", $email, $message);
                 $message = str_replace("{trx_ref}", $trx_ref, $message);
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
         
                 
                 $to = $email;
-                $subject = "Receipt from Billzwave";
+                $subject = "Receipt from ViraSub";
                 $message = file_get_contents("send_receipt_utility.html");
                 $message = str_replace("{email}", $email, $message);
                 $message = str_replace("{trx_ref}", $trx_ref, $message);

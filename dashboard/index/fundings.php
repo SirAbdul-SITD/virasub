@@ -11,7 +11,7 @@ require("settings.php");
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Wallet Funding History | Billzwave</title>
+  <title>Wallet Funding History | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -99,7 +99,7 @@ require("settings.php");
                 </g>
               </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">Billzwave</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">ViraSub</span>
           </a>
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -419,7 +419,7 @@ require("settings.php");
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  | Billzwave
+                  | ViraSub
                 </div>
               </div>
           </footer>

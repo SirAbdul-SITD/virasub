@@ -65,7 +65,7 @@ if (isset($_GET['show_details'])) {
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Account settings - Account Activities | Billzwave</title>
+  <title>Account settings - Account Activities | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -1041,7 +1041,7 @@ if (isset($_GET['show_details'])) {
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  | Billzwave
+                  | ViraSub
                 </div>
               </div>
           </footer>

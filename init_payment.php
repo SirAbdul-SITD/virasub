@@ -43,7 +43,7 @@ try {
     $payment_options = "ussd, card";
     $redirect_url = $page;
     $logo = "https://billzwave.demo.edurelm.site/index/favlogo.png";
-    $title = "Billzwave";
+    $title = "ViraSub";
     $description = "Wallet Funding";
     $customizations = array(
         "title" => $title,

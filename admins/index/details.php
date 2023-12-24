@@ -44,7 +44,7 @@ if (isset($_GET['show_details'])) {
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Successful Transactions History | Billzwave</title>
+  <title>Successful Transactions History | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -1008,7 +1008,7 @@ $row_index = $start_index;
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  | Billzwave
+                  | ViraSub
                 </div>
               </div>
           </footer>

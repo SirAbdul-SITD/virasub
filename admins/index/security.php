@@ -11,7 +11,7 @@ require("settings.php");
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Account settings - Security | Billzwave</title>
+  <title>Account settings - Security | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -386,7 +386,7 @@ require("settings.php");
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  | Billzwave
+                  | ViraSub
                 </div>
               </div>
           </footer>

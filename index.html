@@ -10,7 +10,7 @@
   <!-- ===============================================-->
   <!--    Document Title-->
   <!-- ===============================================-->
-  <title>Billzwave | Get affordable</title>
+  <title>ViraSub | Get affordable</title>
 
 
   <!-- ===============================================-->
@@ -174,7 +174,7 @@
               Fast, Secure & Reliable<img class="img-fluid float-start me-3"
                 src="assets/img/illustrations/arrow-right.png" alt="" /></span>
             <h1 class="mb-4 display-3 fw-bold lh-sm" id="changingHeading" style="color: #14a39a;">
-              Welcome to Billzwave <br class="d-block d-lg-none d-xl-block" /><span style="color: #fb9149">|</span><span
+              Welcome to ViraSub <br class="d-block d-lg-none d-xl-block" /><span style="color: #fb9149">|</span><span
                 id="typewriterText" style="color: #fb9149" style="font-weight: lighter;"> Get affordable
                 data</span>
             </h1>
@@ -216,7 +216,7 @@
 
               typeText();
             </script>
-            <p class="mt-3 mb-4 fs-1">Elevate your payment experience with Billzwave. Our platform offers swift
+            <p class="mt-3 mb-4 fs-1">Elevate your payment experience with ViraSub. Our platform offers swift
               solutions for airtime, data bundles, cable TV subscriptions (DSTV, GOTV, & STARTTIMES), and electricity
               bill payments. Simplify your transactions and enjoy the convenience of secure and reliable services.</p><a
               class="btn btn-lg  rounded-pill hover-top" href="#instant" role="button"
@@ -333,7 +333,7 @@
             <div class="text-center px-lg-3"><img class="img-fluid mb-3" src="assets/img/photos/cost.png" width="90"
                 alt="" />
               <h5 class="fw-bold">Cost-Effective Solutions</h5>
-              <p class="mb-md-0">Billzwave offers budget-friendly solutions for data, airtime, cable, and utility
+              <p class="mb-md-0">ViraSub offers budget-friendly solutions for data, airtime, cable, and utility
                 payments. Make smart financial choices with ease.</p>
             </div>
           </div>
@@ -359,7 +359,7 @@
             <div class="text-center px-lg-3"><img class="img-fluid mb-3" src="assets/img/photos/tailored.png" width="90"
                 alt="" />
               <h5 class="fw-bold">Tailored to You:</h5>
-              <p class="mb-md-0">Tailored to your preferences, Billzwave caters to your specific needs, whether you're a
+              <p class="mb-md-0">Tailored to your preferences, ViraSub caters to your specific needs, whether you're a
                 data user, cable enthusiast, or focused on utilities.
               </p>
             </div>

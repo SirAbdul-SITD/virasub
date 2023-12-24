@@ -73,7 +73,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Fund Wallet | Billzwave</title>
+  <title>Fund Wallet | ViraSub</title>
 
   <meta name="description" content="" />
 
@@ -425,7 +425,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  | Billzwave
+                  | ViraSub
                 </div>
               </div>
           </footer>
