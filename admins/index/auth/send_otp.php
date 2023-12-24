@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                     $message = str_replace("{otp}", $otp, $message); // Replace {otp} with the actual OTP
                     $headers = "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                    $headers .= 'From: noreply@billzwave.com.ng' . "\r\n"; // Replace with your email address
+                    $headers .= 'From: noreply@virasub.com.ng' . "\r\n"; // Replace with your email address
                     mail($to, $subject, $message, $headers);
                     
                     $_SESSION['otp_requester'] = $email;
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 $message = str_replace("{otp}", $otp, $message); // Replace {otp} with the actual OTP
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: noreply@billzwave.com.ng>' . "\r\n"; // Replace with your email address
+                $headers .= 'From: noreply@virasub.com.ng>' . "\r\n"; // Replace with your email address
                 mail($to, $subject, $message, $headers);
                 
                 $_SESSION['otp_requester'] = $email;

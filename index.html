@@ -153,7 +153,7 @@
             <li class="nav-item" data-anchor="data-anchor"><a class="nav-link fw-medium" href="#instant">Instant
                 Buy</a></li>
           </ul>
-          <form class="ps-lg-5" action="https://billzwave.com.ng/dashboard/index/auth/signup.php">
+          <form class="ps-lg-5" action="https://virasub.com.ng/dashboard/index/auth/signup.php">
             <button class="btn btn-lg btn-primary rounded-pill order-0 btn-warning" type="submit"
               style="color: white">SignUp</button>
           </form>
@@ -221,7 +221,7 @@
               bill payments. Simplify your transactions and enjoy the convenience of secure and reliable services.</p><a
               class="btn btn-lg  rounded-pill hover-top" href="#instant" role="button"
               style="color: white; background-color:#14a39a">Instant Purchase</a><a class="btn btn-link ps-md-4"
-              href="https://billzwave.com.ng/dashboard/index/auth/signup.php" role="button" style="text-decoration: none; color: #fb9149; font-weight: bolder"> SignUp</a>
+              href="https://virasub.com.ng/dashboard/index/auth/signup.php" role="button" style="text-decoration: none; color: #fb9149; font-weight: bolder"> SignUp</a>
           </div>
           <div class="col-md-5 col-lg-6 order-md-1 text-center text-md-end"><img class="img-fluid"
               src="Transaction0.png" width="350" alt="" /></div>

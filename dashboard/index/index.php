@@ -109,14 +109,14 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
           $updateStmt->execute();
 
 
-          $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+          $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
           $subject = "New Balance Deposit";
 
           $narration = "A User Just Added Funds To Their Wallet:\n\n";
           $narration .= " Transaction Reference No: $txRef";
           $narration .= " Transaction Amount: $amount";
 
-          $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+          $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
           $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
           mail($to, $subject, $narration, $headers);
@@ -159,7 +159,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
 
 
   } else {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "Balance Deposit Error";
 
     $message = "An error occurred during a wallet funding:\n\n";
@@ -167,7 +167,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
     $message .= " Transaction Reference No: $txRef";
     // $message .= " Transaction Amount: $amount";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 

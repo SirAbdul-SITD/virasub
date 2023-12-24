@@ -8,9 +8,9 @@ session_start();
 
 
 $servername = "localhost";
-$username = "mytvglow_billzwave";
+$username = "mytvglow_virasub";
 $password = "VYIhLghDd,m@4NxDmW";
-$database = "mytvglow_billzwave";
+$database = "mytvglow_virasub";
 
 
 // $servername = "localhost";
@@ -65,39 +65,39 @@ if ($row) {
 
 function sendErrorEmailToAdmin($errorMessage)
 {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "API Request Error";
 
     $message = "An error occurred during a request:\n\n";
     $message .= $errorMessage;
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);
 }
 function sendErrorEmailToManagement($message)
 {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "API Request Error";
 
     $message = "An error occurred during the API request:\n\n";
     $message .= "A user just tried to make purchase but was unable to because your wallet balance at DATASUB247 is low, please fund your wallet so users can make purchases. Message: $message";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);
 }
 function securityBridged($email)
 {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "Critical security issue";
 
     $message = "Security Issues Detected!";
     $message .= "A user just tried to make purchase on a low balance: $email, User account has been deactivated. please check";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);
@@ -105,7 +105,7 @@ function securityBridged($email)
 
 function newAirtimeTransaction($status, $networkName, $requestId, $profit, $message, $phoneNumber, $oldBalance, $newBalance, $system, $planType, $walletVending)
 {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "New Transaction";
 
     $message = "A new transaction was successfully completed:\n\n";
@@ -121,7 +121,7 @@ function newAirtimeTransaction($status, $networkName, $requestId, $profit, $mess
     $message .= "Plan Type: $planType\n";
     $message .= "Wallet Vending: $walletVending\n";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);
@@ -129,7 +129,7 @@ function newAirtimeTransaction($status, $networkName, $requestId, $profit, $mess
 
 function newDataTransaction($status, $networkName, $requestId, $profit, $message, $dataplan, $phoneNumber, $oldBalance, $newBalance, $system, $planType, $walletVending)
 {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "New Transaction";
 
     $message = "A new transaction was successfully completed:\n\n";
@@ -146,7 +146,7 @@ function newDataTransaction($status, $networkName, $requestId, $profit, $message
     $message .= "Plan Type: $planType\n";
     $message .= "Wallet Vending: $walletVending\n";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);

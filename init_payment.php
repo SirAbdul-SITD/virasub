@@ -42,7 +42,7 @@ try {
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
-    $logo = "https://billzwave.demo.edurelm.site/index/favlogo.png";
+    $logo = "https://virasub.demo.edurelm.site/index/favlogo.png";
     $title = "ViraSub";
     $description = "Wallet Funding";
     $customizations = array(

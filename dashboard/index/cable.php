@@ -36,27 +36,27 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
       $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
       $updateStmt->execute();
 
-      $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+      $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
       $subject = "New Balance Deposit";
   
       $message = "A User Just Added Funds To Their Wallet:\n\n";
       $message .= " Transaction Reference No: $txRef";
       $message .= " Transaction Amount: $amount";
   
-      $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+      $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
       $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
   
       mail($to, $subject, $message, $headers);
     
   } else {
-    $to = "sirabdul@nijamart.ng, support@billzwave.com.ng";
+    $to = "sirabdul@nijamart.ng, support@virasub.com.ng";
     $subject = "Balance Deposit Error";
 
     $message = "An error occurred during a wallet funding:\n\n";
     $message .= "A user just tried funding their wallet but the tx_ref is invalid or has already been completed. please check";
     $message .= " Transaction Reference No: $txRef";
 
-    $headers = "From: Your App <noreply@billzwave.com.ng>\r\n";
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     mail($to, $subject, $message, $headers);

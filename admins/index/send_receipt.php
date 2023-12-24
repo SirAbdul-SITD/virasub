@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 $message = str_replace("{time}", $time, $message);
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: noreply@billzwave.com.ng' . "\r\n";
+                $headers .= 'From: noreply@virasub.com.ng' . "\r\n";
                 mail($to, $subject, $message, $headers);
                 
                 $_SESSION['otp_requester'] = $email;
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 $message = str_replace("{time}", $time, $message);
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: noreply@billzwave.com.ng' . "\r\n";
+                $headers .= 'From: noreply@virasub.com.ng' . "\r\n";
                 mail($to, $subject, $message, $headers);
                 
 
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 $message = str_replace("{time}", $time, $message);
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: noreply@billzwave.com.ng' . "\r\n";
+                $headers .= 'From: noreply@virasub.com.ng' . "\r\n";
                 mail($to, $subject, $message, $headers);
                 
 
@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_W
                 $message = str_replace("{time}", $time, $message);
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: noreply@billzwave.com.ng' . "\r\n";
+                $headers .= 'From: noreply@virasub.com.ng' . "\r\n";
                 mail($to, $subject, $message, $headers);
                 
                 $_SESSION['otp_requester'] = $email;

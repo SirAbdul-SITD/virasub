@@ -3,9 +3,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "mytvglow_billzwave";
+$username = "mytvglow_virasub";
 $password = "VYIhLghDd,m@4NxDmW";
-$database = "mytvglow_billzwave";
+$database = "mytvglow_virasub";
 
 
 // ini_set('display_errors', 1);

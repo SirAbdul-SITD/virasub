@@ -279,7 +279,7 @@
                   <!-- Settings -->
                   
                   <div class="card-body">
-                      <h6>How do you want to sign in to billzwave?</h6>
+                      <h6>How do you want to sign in to virasub?</h6>
                     <form id="formAccountSettings" method="POST">
                       <div class="row">
                         <div class="mb-3 col-md-6">
