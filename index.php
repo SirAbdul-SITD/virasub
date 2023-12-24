@@ -133,9 +133,9 @@
       <div class="container">
         <a class="navbar-brand d-flex align-items-center align-content-center fw-bold fs-2" href="index.html">
           <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-          <div style="color: #14a39a;">illzw</div>
-          <div style="color: #fb9149">a</div>
-          <div style="color: #14a39a;">ve</div>
+          <div style="color: #14a39a;">ira</div>
+          <div style="color: #fb9149">S</div>
+          <div style="color: #14a39a;">ub</div>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -512,9 +512,9 @@
           <div class="col-auto mb-5"><a class="pe-2 d-flex align-items-center text-decoration-none fw-bold fs-3"
               href="#">
               <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-              <div style="color: #14a39a;">illzw</div>
-              <div style="color: #fb9149">a</div>
-              <div style="color: #14a39a;">ve</div>
+              <div style="color: #14a39a;">ira</div>
+              <div style="color: #fb9149">S</div>
+              <div style="color: #14a39a;">ub</div>
             </a></div>
         </div>
         <div class="row flex-center">
