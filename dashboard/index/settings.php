@@ -65,6 +65,7 @@ if ($row) {
   $status = $row['status'];
   $user_name = $row['first_name'] ." ". $row['last_name'];
   $_SESSION['user_balance'] = $balance;
+  $public_key = 'FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X';
 
   if (is_null($bal)) {
     $balance = "0.00";

@@ -28,7 +28,7 @@ try {
 
    
 
-    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+    $public_key;
     $currency = "NGN";
     $payment_options = "ussd, card, banktransfer, account";
     $redirect_url = "fund_wallet.php";

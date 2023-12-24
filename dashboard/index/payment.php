@@ -32,7 +32,7 @@ try {
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+    $public_key;
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
