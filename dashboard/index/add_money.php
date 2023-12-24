@@ -34,7 +34,7 @@ try {
 
     $public_key = "FLWPUBK-f30a5f6439c40985a9700d03f84e5bcc-X";
     $currency = "NGN";
-    $payment_options = "ussd, card, banktransfer, account";
+    $payment_options = "ussd, card";
     $redirect_url = "fund_wallet.php";
     $logo = "https://virasub.demo.edurelm.site/index/favlogo.png";
     $title = "ViraSub";
