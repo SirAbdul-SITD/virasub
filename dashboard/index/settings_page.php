@@ -71,7 +71,7 @@
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="index.php" class="app-brand-link">
-            <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
+            <span> <span style="color: #fB9149">V</span>
             <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
           </a>
 
