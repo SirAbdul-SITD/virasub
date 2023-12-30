@@ -95,6 +95,13 @@ if ($decodedData !== null) {
         $updateStmt->execute();
 
 
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :userEmail");
+        $stmt->bindParam(':userEmail', $customer_email, PDO::PARAM_STR);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $balance = $row['balance'];
+
         $newBal = $balance + $amount;
 
         $updateQuery = "UPDATE users SET balance = :newBal WHERE user = :user_email";
