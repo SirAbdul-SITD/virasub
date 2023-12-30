@@ -1,67 +1,67 @@
 <?php
 require('settings.php');
 
-if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
-  $txRef = $_GET['tx_ref'];
+// if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
+//   $txRef = $_GET['tx_ref'];
 
-  // Check if tx_ref exists and is in "Pending" status
-  $checkQuery = "SELECT * FROM funding WHERE trx_ref = :trx_ref AND status = 'Pending'";
-  $checkStmt = $pdo->prepare($checkQuery);
-  $checkStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
-  $checkStmt->execute();
+//   // Check if tx_ref exists and is in "Pending" status
+//   $checkQuery = "SELECT * FROM funding WHERE trx_ref = :trx_ref AND status = 'Pending'";
+//   $checkStmt = $pdo->prepare($checkQuery);
+//   $checkStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
+//   $checkStmt->execute();
 
-  if ($checkStmt->rowCount() === 1) {
-    $row = $checkStmt->fetch(PDO::FETCH_ASSOC);  
-    $amount = $row['amount'];
+//   if ($checkStmt->rowCount() === 1) {
+//     $row = $checkStmt->fetch(PDO::FETCH_ASSOC);  
+//     $amount = $row['amount'];
 
-      $status = "Success";
-
-
-      $updateQuery = "UPDATE funding SET status = :status WHERE trx_ref = :trx_ref";
-      $updateStmt = $pdo->prepare($updateQuery);
-      $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
-      $updateStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
-      $updateStmt->execute();
+//       $status = "Success";
 
 
-      $newBal = $balance + $amount;
+//       $updateQuery = "UPDATE funding SET status = :status WHERE trx_ref = :trx_ref";
+//       $updateStmt = $pdo->prepare($updateQuery);
+//       $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
+//       $updateStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
+//       $updateStmt->execute();
 
-      $balance = $newBal;
+
+//       $newBal = $balance + $amount;
+
+//       $balance = $newBal;
       
-      $updateQuery = "UPDATE users SET balance = :balance WHERE email = :userEmail";
-      $updateStmt = $pdo->prepare($updateQuery);
+//       $updateQuery = "UPDATE users SET balance = :balance WHERE email = :userEmail";
+//       $updateStmt = $pdo->prepare($updateQuery);
 
-      $updateStmt->bindParam(':balance', $newBal, PDO::PARAM_INT);
-      $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
-      $updateStmt->execute();
+//       $updateStmt->bindParam(':balance', $newBal, PDO::PARAM_INT);
+//       $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
+//       $updateStmt->execute();
 
-      $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
-      $subject = "New Balance Deposit";
+//       $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
+//       $subject = "New Balance Deposit";
   
-      $message = "A User Just Added Funds To Their Wallet:\n\n";
-      $message .= " Transaction Reference No: $txRef";
-      $message .= " Transaction Amount: $amount";
-      $message .= " New user balance: $newBal";
+//       $message = "A User Just Added Funds To Their Wallet:\n\n";
+//       $message .= " Transaction Reference No: $txRef";
+//       $message .= " Transaction Amount: $amount";
+//       $message .= " New user balance: $newBal";
   
-      $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
-      $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+//       $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
+//       $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
   
-      mail($to, $subject, $message, $headers);
+//       mail($to, $subject, $message, $headers);
     
-  } else {
-    $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
-    $subject = "Balance Deposit Error";
+//   } else {
+//     $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
+//     $subject = "Balance Deposit Error";
 
-    $message = "An error occurred during a wallet funding:\n\n";
-    $message .= "A user just tried funding their wallet but the tx_ref is invalid or has already been completed. please check";
-    $message .= " Transaction Reference No: $txRef";
+//     $message = "An error occurred during a wallet funding:\n\n";
+//     $message .= "A user just tried funding their wallet but the tx_ref is invalid or has already been completed. please check";
+//     $message .= " Transaction Reference No: $txRef";
 
-    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+//     $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
+//     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    mail($to, $subject, $message, $headers);
-  }
-}
+//     mail($to, $subject, $message, $headers);
+//   }
+// }
 ?>
 <!DOCTYPE html>
 
