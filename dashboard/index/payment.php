@@ -17,8 +17,6 @@ try {
         throw new Exception("Invalid amount! [err_code: #8923] . $amounts");
     }
 
-    // Your secret key
-    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; 
@@ -32,7 +30,6 @@ try {
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key;
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;

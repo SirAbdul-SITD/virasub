@@ -19,8 +19,6 @@ try {
 
     $amount = $amounts + $deposit_fee;
 
-    // Your secret key
-    $secret_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; // Replace with actual email

@@ -48,8 +48,8 @@ if (!isset($_SESSION['csrf_token'])) {
 $user_email = 'abdulkarimhussain7@gmail.com';
 
 $deposit_fee = 30;
-$secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
-$public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+$secret_key = "FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X";
+$public_key = "FLWSECK_TEST-e659c6e0eb2370218c1bb9bc513612ce-X";
 
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :userEmail");
