@@ -14,24 +14,25 @@ try {
     $network = (int) filter_input(INPUT_POST, 'network', FILTER_SANITIZE_NUMBER_INT);
     $plan = (int) filter_input(INPUT_POST, 'plan', FILTER_SANITIZE_NUMBER_INT);
     $phone = (int) filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
-    $amount = (int) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_INT);
+    $amounts = (int) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_INT);
     $page = "dashboard/index/index.php";
     $first_name = (string) filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING); 
     $last_name = (string) filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);    
     $user_email = (string) filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);    
 
-    if (!$amount || $amount <= 0 || $amount >= 50000) {
-        throw new Exception("Invalid amount! [err_code: #8923] . $amount");
+    if (!$amounts || $amounts <= 0 || $amounts >= 50000) {
+        throw new Exception("Invalid amount! [err_code: #8923] . $amounts");
     }
 
     // Your secret key
-    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
+    
 
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; 
     $tx_ref = 'Funds_' . uniqid(); 
     $user_name = "$first_name  . $last_name";
+    $amount = $amounts + $deposit_fee;
 
     // Concatenate values for hashing
     $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $secret_key;
@@ -39,11 +40,11 @@ try {
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+    
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
-    $logo = "https://virasub.demo.edurelm.site/index/favlogo.png";
+    $logo = "https://virasub.com.ng/index/favlogo.png";
     $title = "ViraSub";
     $description = "Wallet Funding";
     $customizations = array(
@@ -88,7 +89,7 @@ try {
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $amounts, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();
@@ -103,7 +104,7 @@ try {
     $updateStmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $amounts, PDO::PARAM_INT);
     $updateStmt->bindParam(':phone', $phone, PDO::PARAM_INT);
     $updateStmt->bindParam(':plan', $plan, PDO::PARAM_INT);
     $updateStmt->bindParam(':network', $network, PDO::PARAM_INT);

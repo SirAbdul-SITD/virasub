@@ -10,29 +10,26 @@ try {
     }
 
     // Sanitize and validate the input data
-    $amount = (int) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_INT);
+    $amounts = (int) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_INT);
     $page = (string) filter_input(INPUT_POST, 'page', FILTER_SANITIZE_STRING);    
 
-    if (!$amount || $amount <= 0 || $amount >= 50000) {
-        throw new Exception("Invalid amount! [err_code: #8923] . $amount");
+    if (!$amounts || $amounts <= 0 || $amounts >= 50000) {
+        throw new Exception("Invalid amount! [err_code: #8923] . $amounts");
     }
 
-    // Your secret key
-    $secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
 
     // Retrieve other necessary data from your preferred data store
     $customer_email = $user_email; 
     $tx_ref = 'Funds_' . uniqid(); 
 
-    $fullAmount = $amount + 50;
+    $amount = $amounts + $deposit_fee;
 
     // Concatenate values for hashing
-    $string_to_be_hashed = $fullAmount . $currency . $customer_email . $tx_ref . $secret_key;
+    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $secret_key;
 
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);
 
-    $public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
@@ -59,7 +56,7 @@ try {
     $paymentPayload = array(
         "public_key" => $public_key,
         "tx_ref" => $tx_ref,
-        "amount" => $fullAmount,
+        "amount" => $amount,
         "currency" => $currency,
         "payment_options" => $payment_options,
         "redirect_url" => $redirect_url,
@@ -80,7 +77,7 @@ try {
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $fullAmount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $amounts, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();

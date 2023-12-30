@@ -63,6 +63,11 @@ if ($row) {
   $_SESSION['user_balance'] = 0; // Default value
 }
 
+
+$deposit_fee = 30;
+$secret_key = "FLWSECK-25775e6bf331078bb1ba111e828a3c26-18c99641f6evt-X";
+$public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+
 function sendErrorEmailToAdmin($errorMessage)
 {
     $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";

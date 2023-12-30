@@ -17,7 +17,7 @@ try {
     }
 
 
-    $amount = $amounts + 50;
+    $amount = $amounts + $deposit_fee;
 
     // Your secret key
     $secret_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
@@ -81,7 +81,7 @@ try {
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-    $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':amount', $amounts, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();
