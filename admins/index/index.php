@@ -373,7 +373,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['purchase-select'])) {
         <div class="app-brand demo">
           <a href="index.php" class="app-brand-link">
             <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">illz<span
+            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span
                 style="color: #fB9149">w</span style="color: #14A39A">ave</span>
           </a>
 

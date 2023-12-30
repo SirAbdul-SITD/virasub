@@ -56,7 +56,7 @@ require("settings.php");
         <div class="app-brand demo">
           <a href="index.php" class="app-brand-link">
            <span> <img src="favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">illz<span style="color: #fB9149">w</span style="color: #14A39A">ave</span>
+            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
           </a>
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

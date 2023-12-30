@@ -94,7 +94,7 @@
             <div class="app-brand justify-content-center">
               <a href="index.php" class="app-brand-link gap-2">
                 <span> <img src="../favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-                <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">illz<span
+                <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span
                     style="color: #fB9149">w</span style="color: #14A39A">ave</span>
               </a>
             </div>
