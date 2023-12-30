@@ -65,8 +65,8 @@ if ($row) {
 
 
 $deposit_fee = 30;
-$secret_key = "FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X";
-$public_key = "FLWSECK_TEST-e659c6e0eb2370218c1bb9bc513612ce-X";
+$public_key = "FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X";
+$secret_key = "FLWSECK_TEST-e659c6e0eb2370218c1bb9bc513612ce-X";
 
 function sendErrorEmailToAdmin($errorMessage)
 {
