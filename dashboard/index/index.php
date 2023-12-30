@@ -399,9 +399,8 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
 
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="index.php" class="app-brand-link">
-            <span> <span style="color: #fB9149">V</span>
-            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
+         <a href="index.php" class="app-brand-link">
+            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2"><span style="color: #fB9149">V</span style="color: #14A39A">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
           </a>
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
