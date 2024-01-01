@@ -71,6 +71,7 @@ if ($decodedData !== null) {
 
         // Execute the query
         $insertStmt->execute();
+        echo "success";
     }
 
 
