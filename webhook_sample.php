@@ -21,7 +21,7 @@ $response = curl_exec($ch);
 if (curl_errno($ch)) {
     echo 'Error: ' . curl_error($ch);
 } else {
-    echo 'Webhook sent successfully';
+    echo 'Webhook sent successfully' . $jsonData;
 }
 
 // Close cURL session
