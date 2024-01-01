@@ -58,7 +58,7 @@ if ($decodedData !== null) {
         $insertStmt->bindParam(':merchantFee', $data['data']['merchant_fee'], PDO::PARAM_STR);
         $insertStmt->bindParam(':processorResponse', $data['data']['processor_response'], PDO::PARAM_STR);
         $insertStmt->bindParam(':authModel', $data['data']['auth_model'], PDO::PARAM_STR);
-        $insertStmt->bindParam(':ip', $data['data']['ip'], PDO::PARAM_STR);
+        $insertStmt->bindParam(':ip', $decodedData, PDO::PARAM_STR);
         $insertStmt->bindParam(':narration', $data['data']['narration'], PDO::PARAM_STR);
         $insertStmt->bindParam(':status', $data['data']['status'], PDO::PARAM_STR);
         $insertStmt->bindParam(':paymentType', $data['data']['payment_type'], PDO::PARAM_STR);
