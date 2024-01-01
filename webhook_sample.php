@@ -13,6 +13,7 @@ $ch = curl_init($webhookUrl);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 // Execute cURL session
 $response = curl_exec($ch);
@@ -21,7 +22,8 @@ $response = curl_exec($ch);
 if (curl_errno($ch)) {
     echo 'Error: ' . curl_error($ch);
 } else {
-    echo 'Webhook sent successfully' . $jsonData;
+    // Handle the response
+    echo 'Webhook sent successfully. Response: ' . $response;
 }
 
 // Close cURL session
