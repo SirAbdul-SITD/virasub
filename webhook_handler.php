@@ -7,13 +7,12 @@ require("settings.php");
 $webhookData = file_get_contents("php://input");
 
 // Verify the secret hash
-$secretHash = 'bwiuebfybwe8fg7843gr87bebf78'; // Replace with your actual secret hash
+$secretHash = 'bwiuebfybwe8fg7843gr89y8764w345wdgchmjnj9y897tr564w42qqr9809u90hiuv54w65e876t89y89674563453354duy7bebf78'; // Replace with your actual secret hash
 $signature = isset($_SERVER['HTTP_VERIF_HASH']) ? $_SERVER['HTTP_VERIF_HASH'] : null;
 
 if (!hash_equals($secretHash, $signature)) {
     // Secret hash doesn't match, discard the request
-    http_response_code(401); // Unauthorized
-    echo "Invalid secret hash.";
+    http_response_code(404);
     exit;
 }
 
@@ -142,12 +141,9 @@ if ($decodedData !== null) {
 
     // Respond with a 200 status code to acknowledge receipt
     http_response_code(200);
-    echo "Webhook data received and processed successfully.";
     print_r($decodedData);
 } else {
-    // Respond with an error if the data is not valid JSON
-    http_response_code(400); // Bad Request
-    echo "Invalid JSON data.";
+    http_response_code(404);
 }
 
 ?>
