@@ -367,7 +367,7 @@ require("settings.php");
                       <th>Amount</th>
                       <th>Status</th>
                       <th>Date & Time</th>
-                      <th>Trx_ref</th>
+                      <th>Transaction Reference</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
