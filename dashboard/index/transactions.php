@@ -268,10 +268,10 @@ require("settings.php");
 
               <div class="table-responsive text-nowrap">
                 <?php
-                   $status = "Completed";
-                   $query = "SELECT * FROM transactions WHERE status = :status ORDER BY `transactions`.`date` DESC";
+                  //  $status = "Completed";
+                   $query = "SELECT * FROM transactions WHERE user = :userEmail ORDER BY `transactions`.`date` DESC";
                    $stmt = $pdo->prepare($query);
-                   $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+                   $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
                    $stmt->execute();
                    $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
