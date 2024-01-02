@@ -298,7 +298,7 @@ require("settings.php");
                     <a class="dropdown-item filter-option" data-filter="Credit Card" href="javascript:void(0);">Credit
                       Card Deposit
                       History</a>
-                    <a class="dropdown-item filter-option" data-filter="USSD" href="javascript:void(0);">USSD Deposit
+                    <a class="dropdown-item filter-option" data-filter="ussd" href="javascript:void(0);">USSD Deposit
                       History</a>
                     <a class="dropdown-item filter-option" data-filter="Bank Transfer" href="javascript:void(0);">Bank
                       Transfer
