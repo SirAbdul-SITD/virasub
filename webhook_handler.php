@@ -7,7 +7,7 @@ require("settings.php");
 $webhookData = file_get_contents("php://input");
 
 // Verify the secret hash
-$secretHash = 'bwiuebfybwe8fg7843gr87bebf78hhhhh'; // Replace with your actual secret hash
+$secretHash = 'bwiuebfybwe8fg7843gr87bebf78'; // Replace with your actual secret hash
 $signature = isset($_SERVER['HTTP_VERIF_HASH']) ? $_SERVER['HTTP_VERIF_HASH'] : null;
 
 if (!hash_equals($secretHash, $signature)) {
