@@ -269,7 +269,7 @@ require("settings.php");
               <div class="table-responsive text-nowrap">
                 <?php
                 // Fetch transaction data from the database
-                $query = "SELECT * FROM transactions WHERE user = :userEmail";
+                $query = "SELECT * FROM transactions ";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
                 $stmt->execute();
