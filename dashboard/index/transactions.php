@@ -260,8 +260,6 @@ require("settings.php");
                       History</a>
                     <a class="dropdown-item filter-option" data-filter="Utility" href="javascript:void(0);">Utility
                       History</a>
-                    <a class="dropdown-item filter-option" data-filter="Transactions"
-                      href="javascript:void(0);">Transactions</a>
                   </div>
                 </div>
               </span>
@@ -269,7 +267,7 @@ require("settings.php");
               <div class="table-responsive text-nowrap">
                 <?php
                 // Fetch transaction data from the database
-                $query = "SELECT * FROM transactions WHERE user = :userEmail";
+                $query = "SELECT * FROM transactions";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
                 $stmt->execute();
