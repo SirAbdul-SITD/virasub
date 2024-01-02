@@ -390,15 +390,10 @@ require("settings.php");
                           </span>
                         </td>
                         <td>
-                          <?php
-                          $timestamp =  $transaction['status'];
-                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s.u', $timestamp);
-                          
-                          // Format the datetime as you desire
-                          $formattedDateTime = $dateTime->format('Y-m-d H:i:s.u');
-                          
-                          echo $formattedDateTime;
+                          <?php $formattedDateTime = $transaction['date']->format('Y-m-d H:i:s.u');
+                            echo $formattedDateTime;
                             ?>
+
                         </td>
                         <td>
                           <?= $transaction['trx_ref']; ?>
