@@ -366,7 +366,7 @@ require("settings.php");
                       <th>Type</th>
                       <th>Amount</th>
                       <th>Status</th>
-                      <th>Date</th>
+                      <th>Date Time</th>
                       <th>Trx_ref</th>
                     </tr>
                   </thead>
