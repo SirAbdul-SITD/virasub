@@ -268,12 +268,12 @@ require("settings.php");
 
               <div class="table-responsive text-nowrap">
                 <?php
-                // Fetch transaction data from the database
-                $query = "SELECT * FROM transactions ";
-                $stmt = $pdo->prepare($query);
-                $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
-                $stmt->execute();
-                $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                   $status = "Completed";
+                   $query = "SELECT * FROM transactions WHERE status = :status ORDER BY `transactions`.`date` DESC";
+                   $stmt = $pdo->prepare($query);
+                   $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+                   $stmt->execute();
+                   $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 // Determine the current page from the query parameter, default to 1 if not set
                 $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
