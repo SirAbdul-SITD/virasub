@@ -359,7 +359,7 @@ require("settings.php");
                         </td>
                         <td>
                           <span class="badge <?= getStatusClass($transaction['status']); ?> me-1">
-                            <?= $transaction['status']; ?>
+
                           </span>
                         </td>
                         <td>
