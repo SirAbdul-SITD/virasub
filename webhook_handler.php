@@ -103,7 +103,7 @@ if ($decodedData !== null) {
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
         $updateStmt->bindParam(':type', $payment_type, PDO::PARAM_STR);
-        $updateStmt->bindParam(':narration', $narration, PDO::PARAM_STR);
+        $updateStmt->bindParam(':narration', $yourSecretHash, PDO::PARAM_STR);
         $updateStmt->execute();
         
 
@@ -132,7 +132,7 @@ if ($decodedData !== null) {
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
         $updateStmt->bindParam(':type', $payment_type, PDO::PARAM_STR);
-        $updateStmt->bindParam(':narration', $yourSecretHash, PDO::PARAM_STR);
+        $updateStmt->bindParam(':narration', $narration, PDO::PARAM_STR);
         $updateStmt->execute();
         
     }
