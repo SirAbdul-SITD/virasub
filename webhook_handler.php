@@ -12,7 +12,7 @@ $decodedData = json_decode($webhookData, true);
 // Check if decoding was successful
 if ($decodedData !== null) {
     // $status = $decodedData['data']['status'];
-    $status = "nbjb";
+    // $status = "nbjb";
     $tx_ref = $decodedData['data']['tx_ref'];
     $payment_type = $decodedData['data']['payment_type'];
     $customer_email = $decodedData['data']['customer']['email'];
