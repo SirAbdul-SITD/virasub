@@ -154,7 +154,7 @@ require("settings.php");
           </li>
           <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="History">History</div>
             </a>
 
@@ -175,7 +175,7 @@ require("settings.php");
           </li>
           <li class="menu-item">
             <a href="settings_page.php" class="menu-link">
-             <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="Settings">Account Settings</div>
             </a>
           </li>
@@ -236,7 +236,7 @@ require("settings.php");
                             <?php echo $user_name; ?>
                           </span>
                           <small class="text-muted">Balance: ₦
-                          <?php echo number_format($balance, 2, '.', ','); ?>
+                            <?php echo number_format($balance, 2, '.', ','); ?>
                           </small>
                         </div>
                       </div>
@@ -257,7 +257,7 @@ require("settings.php");
                       <span class="align-middle">Settings</span>
                     </a>
                   </li>
-                  
+
                   <li>
                     <div class="dropdown-divider"></div>
                   </li>
@@ -357,7 +357,11 @@ require("settings.php");
                         <td>₦
                           <?= $transaction['amount']; ?>
                         </td>
-                        <td><span class="badge <?= getStatusClass($transaction['status']); ?> me-1"><?= $transaction['status']; ?></span></td>
+                        <td>
+                          <span class="badge <?= getStatusClass($transaction['status']); ?> me-1">
+                            <?= $transaction['status']; ?>
+                          </span>
+                        </td>
                         <td>
                           <?= $transaction['date']; ?>
                         </td>
