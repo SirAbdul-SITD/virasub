@@ -77,6 +77,7 @@ if ($decodedData !== null) {
 
 
 
+    $status == "successful";
 
     $query = "SELECT `status` FROM funding WHERE trx_ref = :trx_ref";
     $stmt = $pdo->prepare($query);
