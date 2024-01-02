@@ -353,7 +353,7 @@ require('settings.php');
                           <form id="wallet_fundingForm">
                             <div style="display: flex;">
                               <p id="balanceText" style="font-size: small;">Current Balance:
-                                <?php echo "₦ " . $balance; ?>
+                              Balance: ₦ <?php echo number_format($balance, 2, '.', ','); ?>
                               </p>
                             </div>
                             <div class="mt-2 mb-3">
