@@ -36,7 +36,7 @@ if ($row) {
   $type = $row['type'];
   $status = $row['status'];
   $create_datetime = $row["create_datetime"];
-  $user_name = $row['first_name'] . " " . $row['last_name'];
+  $user_name = $row['first_name'] . ' ' . $row['last_name'];
   $_SESSION['user_balance'] = $bal;
 
   if (is_null($bal)) {

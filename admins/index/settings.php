@@ -45,7 +45,8 @@ if (!isset($_SESSION['csrf_token'])) {
 
 
 
-$user_email = 'abdulkarimhussain7@gmail.com';
+// $user_email = 'abdulkarimhussain7@gmail.com';
+$user_email = $_SESSION['email'];
 
 $deposit_fee = 30;
 $public_key = "FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X";

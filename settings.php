@@ -37,7 +37,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 
 
-$user_email = 'user2@example.com';
+// $user_email = 'user2@example.com';
 $_SESSION['admin_email'] = "abdulkarimhussain7@gmail.com";
 $_SESSION['email'] = 'user2@example.com';
 $_SESSION['name'] = "Abdulkarim Hussain";
@@ -56,7 +56,7 @@ if ($row) {
   $address = $row['address'];
   $state = $row['state'];
   $status = $row['status'];
-  $user_name = $row['first_name'] ." ". $row['last_name'];
+  $user_name = $row['first_name'] . ' ' . $row['last_name'];
   $_SESSION['user_balance'] = $balance;
 } else {
   // Handle the case where no row is found
