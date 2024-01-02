@@ -83,7 +83,7 @@ if ($decodedData !== null) {
 
         $trx_status = "Completed";
 
-        $updateQuery = "UPDATE funding SET status = :status, type = :type narration = :narration, WHERE trx_ref = :trx_ref";
+        $updateQuery = "UPDATE funding SET status = :status, type = :type, narration = :narration, WHERE trx_ref = :trx_ref";
         $updateStmt = $pdo->prepare($updateQuery);
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
