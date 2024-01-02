@@ -260,8 +260,8 @@ require("settings.php");
                       History</a>
                     <a class="dropdown-item filter-option" data-filter="Utility" href="javascript:void(0);">Utility
                       History</a>
-                    <a class="dropdown-item filter-option" data-filter="Wallet_Funding"
-                      href="javascript:void(0);">Wallet Funding</a>
+                    <a class="dropdown-item filter-option" data-filter="Transactions"
+                      href="javascript:void(0);">Transactions</a>
                   </div>
                 </div>
               </span>
@@ -274,6 +274,31 @@ require("settings.php");
                 $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
                 $stmt->execute();
                 $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                // Determine the current page from the query parameter, default to 1 if not set
+                $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+                // Define the number of results to display per page
+                $results_per_page = 25;
+
+                // Calculate the starting index for results based on the current page
+                $start_index = ($current_page - 1) * $results_per_page;
+
+                // Slice the array of transactions to get the results for the current page
+                $paginated_data = array_slice($transactionData, $start_index, $results_per_page);
+
+                // Initialize the index for the first row on the current page
+                $row_index = $start_index;
+
+                // Calculate the total number of pages based on the paginated data
+                $total_pages = ceil(count($transactionData) / $results_per_page);
+
+                // Define how many pagination links to show before and after the current page
+                $max_links = 1;
+
+                // Calculate the range of pagination links to display
+                $start_link = max($current_page, 1);
+                $end_link = min($current_page + $max_links, $total_pages);
 
                 function getStatusClass($status)
                 {
@@ -300,10 +325,10 @@ require("settings.php");
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
-                    <?php foreach ($transactionData as $index => $transaction): ?>
+                  <?php foreach ($paginated_data as $transaction): ?>
                       <tr>
                         <td>
-                          <?= $index + 1; ?>
+                          <?= $row_index + 1; ?>
                         </td>
                         <td>
                           <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>
@@ -324,6 +349,40 @@ require("settings.php");
                     <?php endforeach; ?>
                   </tbody>
                 </table>
+
+                <!-- Pagination links -->
+                <ul class="pagination" style="justify-content: right; margin: 20px;">
+                  <?php
+                  // Generate the first pagination link
+                  if ($start_link > 1) {
+                    echo '<li class="page-item"><a class="page-link" href="?page=1">1</a></li>';
+                    if ($start_link > 2) {
+                      if ($start_link > 3) {
+                        echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                      }
+                      echo '<li class="page-item"><a class="page-link" href="?page=' . ($start_link - 1) . '">' . ($start_link - 1) . '</a></li>';
+                    }
+                  }
+
+                  // Generate the pagination links within the range
+                  for ($page = $start_link; $page <= $end_link; $page++) {
+                    $active_class = ($page === $current_page) ? 'active' : '';
+                    echo '<li class="page-item ' . $active_class . '"><a class="page-link" href="?page=' . $page . '">' . $page . '</a></li>';
+                  }
+
+                  // Generate the last pagination link
+                  if ($end_link < $total_pages) {
+                    if ($end_link < $total_pages - 1) {
+                      if ($end_link < $total_pages - 2) {
+                        echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                      }
+                    }
+                    echo '<li class="page-item"><a class="page-link" href="?page=' . $total_pages . '">' . $total_pages . '</a></li>';
+                  }
+                  ?>
+                </ul>
+
+
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
                     const filterOptions = document.querySelectorAll('.filter-option');
