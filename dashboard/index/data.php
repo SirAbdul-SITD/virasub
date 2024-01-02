@@ -11,43 +11,43 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
   $checkStmt->execute();
 
   if ($checkStmt->rowCount() === 1) {
-    $row = $checkStmt->fetch(PDO::FETCH_ASSOC);  
+    $row = $checkStmt->fetch(PDO::FETCH_ASSOC);
     $amount = $row['amount'];
 
-      $status = "Success";
+    $status = "Success";
 
 
-      $updateQuery = "UPDATE funding SET status = :status WHERE trx_ref = :trx_ref";
-      $updateStmt = $pdo->prepare($updateQuery);
-      $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
-      $updateStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
-      $updateStmt->execute();
+    $updateQuery = "UPDATE funding SET status = :status WHERE trx_ref = :trx_ref";
+    $updateStmt = $pdo->prepare($updateQuery);
+    $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
+    $updateStmt->bindParam(':trx_ref', $txRef, PDO::PARAM_STR);
+    $updateStmt->execute();
 
 
-      $newBal = $balance + $amount;
+    $newBal = $balance + $amount;
 
-      $balance = $newBal;
+    $balance = $newBal;
 
-      
-      $updateQuery = "UPDATE users SET balance = :balance WHERE email = :userEmail";
-      $updateStmt = $pdo->prepare($updateQuery);
 
-      $updateStmt->bindParam(':balance', $newBal, PDO::PARAM_STR);
-      $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
-      $updateStmt->execute();
+    $updateQuery = "UPDATE users SET balance = :balance WHERE email = :userEmail";
+    $updateStmt = $pdo->prepare($updateQuery);
 
-      $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
-      $subject = "New Balance Deposit";
-  
-      $message = "A User Just Added Funds To Their Wallet:\n\n";
-      $message .= " Transaction Reference No: $txRef";
-      $message .= " Transaction Amount: $amount";
-  
-      $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
-      $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-  
-      mail($to, $subject, $message, $headers);
-    
+    $updateStmt->bindParam(':balance', $newBal, PDO::PARAM_STR);
+    $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
+    $updateStmt->execute();
+
+    $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
+    $subject = "New Balance Deposit";
+
+    $message = "A User Just Added Funds To Their Wallet:\n\n";
+    $message .= " Transaction Reference No: $txRef";
+    $message .= " Transaction Amount: $amount";
+
+    $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    mail($to, $subject, $message, $headers);
+
   } else {
     $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
     $subject = "Balance Deposit Error";
@@ -145,8 +145,10 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-         <a href="index.php" class="app-brand-link">
-            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2"><span style="color: #fB9149">V</span style="color: #14A39A">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
+          <a href="index.php" class="app-brand-link">
+            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2"><span
+                style="color: #fB9149">V</span style="color: #14A39A">ira<span style="color: #fB9149">S</span
+                style="color: #14A39A">ub</span>
           </a>
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -191,8 +193,8 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
               <div data-i18n="Basic">Utility Bills</div>
             </a>
           </li>
-           <!-- Management -->
-           <li class="menu-header small text-uppercase"><span class="menu-header-text">Management</span></li>
+          <!-- Management -->
+          <li class="menu-header small text-uppercase"><span class="menu-header-text">Management</span></li>
           <li class="menu-item">
             <a href="fund_wallet.php" class="menu-link">
               <i> <img src="icons/wallet.png" style="width: 20px; margin-right: 10px;"> </i>
@@ -201,7 +203,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
           </li>
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="History">History</div>
             </a>
 
@@ -222,7 +224,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
           </li>
           <li class="menu-item">
             <a href="settings_page.php" class="menu-link">
-             <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="Settings">Account Settings</div>
             </a>
           </li>
@@ -360,7 +362,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
 
                     <div style="display: flex;">
                       <p id="balanceText" style="font-size: small;">Balance: ₦
-                          <?php echo number_format($balance, 2, '.', ','); ?>
+                        <?php echo number_format($balance, 2, '.', ','); ?>
                       </p>
                     </div>
 
@@ -518,23 +520,23 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
 
 
                   const plansData = [
-                    [1, '1', 'SME', '1.0GB', '₦245.00', '1 Month'],
-                    [2, '1', 'SME', '3.0GB', '₦685.00', '1 Month'],
-                    [3, '1', 'SME', '2.0GB', '₦500.00', '1 Month'],
-                    [4, '1', 'SME', '5.0GB', '₦2000.00', '1 Month'],
-                    [5, '1', 'SME', '10.0GB', '₦2,650.00', '1 Month'],
-                    [6, '1', 'SME', '500MB', '₦200.00', '1 Month'],
+                    [1, '1', 'SME', '1.0GB', '₦275.00', '1 Month'],
+                    [2, '1', 'SME', '3.0GB', '₦790.00', '1 Month'],
+                    [3, '1', 'SME', '2.0GB', '₦530.00', '1 Month'],
+                    [4, '1', 'SME', '5.0GB', '₦1,320.00', '1 Month'],
+                    [5, '1', 'SME', '10.0GB', '₦2,620.00', '1 Month'],
+                    [6, '1', 'SME', '500MB', '₦145.00', '1 Month'],
                     [7, '1', 'COOPERATE GIFTING', '500MB', '₦155.00', '1 Month'],
                     [8, '1', 'COOPERATE GIFTING', '1.0GB', '₦285.00', '1 Month'],
                     [9, '1', 'COOPERATE GIFTING', '2.0GB', '₦650.00', '1 Month'],
                     [10, '1', 'COOPERATE GIFTING', '3.0GB', '₦850.00', '1 Month'],
                     [11, '1', 'COOPERATE GIFTING', '5.0GB', '₦1,600.00', '1 Month'],
                     [12, '1', 'COOPERATE GIFTING', '10.0GB', '₦2,650.00', '1 Month'],
-                    [13, '2', 'COOPERATE GIFTING', '500MB', '₦150.00', '1 Month'],
-                    [14, '2', 'COOPERATE GIFTING', '1.0GB', '₦250.00', '1 Month'],
-                    [15, '2', 'COOPERATE GIFTING', '2.0GB', '₦500.00', '1 Month'],
-                    [17, '2', 'COOPERATE GIFTING', '5.0GB', '₦1,300.00', '1 Month'],
-                    [18, '2', 'COOPERATE GIFTING', '10.0GB', '₦2,600.00', '1 Month'],
+                    [13, '2', 'COOPERATE GIFTING', '500MB', '₦120.00', '1 Month'],
+                    [14, '2', 'COOPERATE GIFTING', '1.0GB', '₦220.00', '1 Month'],
+                    [15, '2', 'COOPERATE GIFTING', '2.0GB', '₦430.00', '1 Month'],
+                    [17, '2', 'COOPERATE GIFTING', '5.0GB', '₦1,070.00', '1 Month'],
+                    [18, '2', 'COOPERATE GIFTING', '10.0GB', '₦2,130.00', '1 Month'],
                     [19, '3', 'GIFTING', '1.05GB', '₦500.00', '14 Days'],
                     [20, '3', 'GIFTING', '3.90GB', '₦1200.00', '1 Month'],
                     [21, '3', 'GIFTING', '5.8GB', '₦2100.00', '1 Month'],
@@ -555,13 +557,13 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                     [41, '4', 'GIFTING', '11.0GB', '₦4,030.00', '1 Month'],
                     [42, '4', 'GIFTING', '15.0GB', '₦5200.00', '1 Month'],
                     [43, '4', 'GIFTING', '40.0GB', '₦11500.00', '1 Month'],
-                    [44, '3', 'COOPERATE GIFTING', '200MB', '₦125.00', '30 days'],
-                    [45, '3', 'COOPERATE GIFTING', '500MB', '₦155.00', '30 days'],
-                    [46, '3', 'COOPERATE GIFTING', '1.0GB', '₦260.00', '30 days'],
-                    [47, '3', 'COOPERATE GIFTING', '2.0GB', '₦485.00', '30 days'],
-                    [48, '3', 'COOPERATE GIFTING', '3.0GB', '₦720.00', '30 days'],
-                    [49, '3', 'COOPERATE GIFTING', '5.0GB', '₦1,250.00', '30 days'],
-                    [50, '3', 'COOPERATE GIFTING', '10.0GB', '₦2,650.00', '30 days'],
+                    [44, '3', 'COOPERATE GIFTING', '200MB', '₦105.00', '30 days'],
+                    [45, '3', 'COOPERATE GIFTING', '500MB', '₦135.00', '30 days'],
+                    [46, '3', 'COOPERATE GIFTING', '1.0GB', '₦240.00', '30 days'],
+                    [47, '3', 'COOPERATE GIFTING', '2.0GB', '₦480.00', '30 days'],
+                    [48, '3', 'COOPERATE GIFTING', '3.0GB', '₦700.00', '30 days'],
+                    [49, '3', 'COOPERATE GIFTING', '5.0GB', '₦1,160.00', '30 days'],
+                    [50, '3', 'COOPERATE GIFTING', '10.0GB', '₦2,320.00', '30 days'],
                     [51, '1', 'COOPERATE GIFTING', '15.0GB', '₦3850.00', '30 days'],
                     [53, '2', 'COOPERATE GIFTING', '20.0GB', '₦5000.00', '30 days'],
                     [54, '2', 'GIFTING', '750MB', '₦500.00', '14 Days'],
@@ -604,7 +606,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                       if (
                         (selectedNetwork === network) &&
                         (
-                          (network === '1' && planType === 'SME') ||
+                          (network === '1' && planType === 'SME' || planType === 'GIFTING') ||
                           (network === '2' && planType === 'COOPERATE GIFTING') ||
                           (network === '3' && planType === 'GIFTING') ||
                           (network === '4' && planType === 'GIFTING')
@@ -631,7 +633,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         // Assign the value to the hidden input
                         const amountInput = document.getElementById("amount");
                         amountInput.value = amount; // Assign the stripped price
-                        
+
                         if (strippedPrice > balance) {
                           document.getElementById("purchaseButton").innerText = 'Buy with bank';
                         } else {
