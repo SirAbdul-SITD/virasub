@@ -47,9 +47,9 @@ if ($decodedData !== null) {
         $insertStmt = $pdo->prepare($insertQuery);
 
         // Bind parameters
-        $insertStmt->bindParam(':eventStatus', $data['data']['status'], PDO::PARAM_STR);
-        $insertStmt->bindParam(':txRef', $data['data']['tx_ref'], PDO::PARAM_STR);
-        $insertStmt->bindParam(':flwRef', $data['data']['flw_ref'], PDO::PARAM_STR);
+        $insertStmt->bindParam(':eventStatus', $decodedData['data']['status'], PDO::PARAM_STR);
+        $insertStmt->bindParam(':txRef', $decodedData['data']['tx_ref'], PDO::PARAM_STR);
+        $insertStmt->bindParam(':flwRef', $decodedData['data']['flw_ref'], PDO::PARAM_STR);
         $insertStmt->bindParam(':deviceFingerprint', $data['data']['device_fingerprint'], PDO::PARAM_STR);
         $insertStmt->bindParam(':amount', $data['data']['amount'], PDO::PARAM_INT);
         $insertStmt->bindParam(':currency', $data['data']['currency'], PDO::PARAM_STR);
@@ -58,7 +58,7 @@ if ($decodedData !== null) {
         $insertStmt->bindParam(':merchantFee', $data['data']['merchant_fee'], PDO::PARAM_STR);
         $insertStmt->bindParam(':processorResponse', $data['data']['processor_response'], PDO::PARAM_STR);
         $insertStmt->bindParam(':authModel', $data['data']['auth_model'], PDO::PARAM_STR);
-        $insertStmt->bindParam(':ip', $decodedData, PDO::PARAM_STR);
+        $insertStmt->bindParam(':ip', $data['data']['ip'], PDO::PARAM_STR);
         $insertStmt->bindParam(':narration', $data['data']['narration'], PDO::PARAM_STR);
         $insertStmt->bindParam(':status', $data['data']['status'], PDO::PARAM_STR);
         $insertStmt->bindParam(':paymentType', $data['data']['payment_type'], PDO::PARAM_STR);
