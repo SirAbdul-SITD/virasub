@@ -15,6 +15,7 @@ if ($decodedData !== null) {
     $tx_ref = $decodedData['data']['tx_ref'];
     $payment_type = $decodedData['data']['payment_type'];
     $customer_email = $decodedData['data']['customer']['email'];
+    $narration = $decodedData['data']['narration'];
     $amount = $decodedData['data']['amount'];
 
 
@@ -88,7 +89,7 @@ if ($decodedData !== null) {
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
         $updateStmt->bindParam(':type', $payment_type, PDO::PARAM_STR);
-        $updateStmt->bindParam(':narration', $decodedData['data']['narration'], PDO::PARAM_STR);
+        $updateStmt->bindParam(':narration', $narration, PDO::PARAM_STR);
         $updateStmt->execute();
 
 
@@ -117,6 +118,7 @@ if ($decodedData !== null) {
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
         $updateStmt->bindParam(':type', $payment_type, PDO::PARAM_STR);
+        $updateStmt->bindParam(':narration', $narration, PDO::PARAM_STR);
         $updateStmt->execute();
 
     }
