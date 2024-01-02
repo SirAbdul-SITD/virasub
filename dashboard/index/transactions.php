@@ -320,8 +320,8 @@ require("settings.php");
                       <th>Type</th>
                       <th>Amount</th>
                       <th>Status</th>
-                      <th>Date</th>
-                      <th>Trx_ref</th>
+                      <th>Date & Time</th>
+                      <th>Transaction Reference</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
@@ -340,7 +340,14 @@ require("settings.php");
                         </td>
                         <td><span class="badge <?= getStatusClass($transaction['status']); ?> me-1"><?= $transaction['status']; ?></span></td>
                         <td>
-                          <?= $transaction['date']; ?>
+                          <?php $timestamp = $transaction['date'];
+                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s.u', $timestamp);
+
+                          // Format the datetime as you desire
+                          $formattedDateTime = $dateTime->format('Y-m-d H:i:s');
+
+                          echo $formattedDateTime;
+                          ?>
                         </td>
                         <td>
                           <?= $transaction['trx_ref']; ?>
