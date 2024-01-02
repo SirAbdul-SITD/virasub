@@ -104,7 +104,7 @@ if ($decodedData !== null) {
 
         $newBal = $balance + $amount;
 
-        $updateQuery = "UPDATE users SET balance = :newBal WHERE ass = :user_email";
+        $updateQuery = "UPDATE users SET balance = :newBal WHERE email = :user_email";
         $updateStmt = $pdo->prepare($updateQuery);
         $updateStmt->bindParam(':newBal', $newBal, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_email', $customer_email, PDO::PARAM_STR);
