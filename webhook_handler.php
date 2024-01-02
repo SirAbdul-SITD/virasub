@@ -127,7 +127,8 @@ if ($decodedData !== null) {
 
     // Respond with a 200 status code to acknowledge receipt
     http_response_code(200);
-    echo "Webhook data received and processed successfully. " . $decodedData;
+    echo "Webhook data received and processed successfully. ";
+    print_r($decodedData);
 } else {
     // Respond with an error if the data is not valid JSON
     http_response_code(400); // Bad Request
