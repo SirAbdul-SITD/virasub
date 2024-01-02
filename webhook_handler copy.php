@@ -128,7 +128,6 @@ if ($decodedData !== null) {
     $pdo = null;
 
 
-
     // Respond with a 200 status code to acknowledge receipt
     http_response_code(200);
     echo "Webhook data received and processed successfully.";
