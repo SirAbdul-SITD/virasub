@@ -6,29 +6,16 @@ require("settings.php");
 // Get the raw POST data
 $webhookData = file_get_contents("php://input");
 
-
 // Verify the secret hash
-$possibleHeaderNames = ['VERIF-HASH', 'Verif-Hash', 'verif-hash'];
-$secretHashFromHeader = null;
+$secretHash = 'YOUR_SECRET_HASH'; // Replace with your actual secret hash
+$signature = isset($_SERVER['HTTP_VERIF-HASH']) ? $_SERVER['HTTP_VERIF-HASH'] : null;
 
-foreach ($possibleHeaderNames as $headerName) {
-    if (isset($_SERVER[$headerName])) {
-        $secretHashFromHeader = $_SERVER[$headerName];
-        break;
-    }
-}
-
-
-// Replace 'YOUR_SECRET_HASH' with the actual secret hash you set
-$yourSecretHash = 'bwiuebfybwe8fg7843gr87bebf78';
-
-if ($secretHashFromHeader !== $yourSecretHash) {
+if (!$signature || ($signature !== $secretHash)) {
     // Secret hash doesn't match, discard the request
-    http_response_code(403); // Forbidden
+    http_response_code(401); // Unauthorized
     echo "Invalid secret hash.";
     exit;
 }
-
 
 
 // Decode the JSON data
