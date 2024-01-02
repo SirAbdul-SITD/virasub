@@ -1040,10 +1040,11 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
               <!-- Order Statistics -->
 
               <?php
-              // Fetch transaction data from the database
-              $query = "SELECT * FROM transactions WHERE user = :userEmail";
+              $status = "Completed";
+              $query = "SELECT * FROM transactions WHERE user = :userEmail AND status = :status";
               $stmt = $pdo->prepare($query);
               $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
+              $stmt->bindParam(':status', $status, PDO::PARAM_STR);
               $stmt->execute();
               $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -1181,7 +1182,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                        <a class="dropdown-item" href="fund_wallet.php">View All</a>
+                        <a class="dropdown-item" href="fundings.php">View All</a>
                       </div>
                     </div>
                   </div>
