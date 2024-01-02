@@ -77,7 +77,7 @@ if ($decodedData !== null) {
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $stmt->execute();
-    $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $transactionData = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($transactionData['status'] !== $status || $status == "successful") {
 
