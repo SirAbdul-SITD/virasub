@@ -7,12 +7,12 @@ require("settings.php");
 $webhookData = file_get_contents("php://input");
 
 // Verify the secret hash
-$secretHashFromHeader = isset($_SERVER['VERIF-HASH']) ? $_SERVER['VERIF-HASH'] : null;
+$secretHashFromHeader = isset($_SERVER['HTTP_VERIF-HASH']) ? $_SERVER['HTTP_VERIF-HASH'] : null;
 
 // Replace 'YOUR_SECRET_HASH' with the actual secret hash you set
 $yourSecretHash = 'bwiuebfybwe8fg7843gr87bebf78';
 
-if ($secretHashFromHeader !== $yourSecretHash) {
+if ($secretHashFromHeader == $yourSecretHash) {
     // Secret hash doesn't match, discard the request
     http_response_code(403); // Forbidden
     echo "Invalid secret hash.";
