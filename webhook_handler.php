@@ -11,8 +11,7 @@ $decodedData = json_decode($webhookData, true);
 
 // Check if decoding was successful
 if ($decodedData !== null) {
-    // $status = $decodedData['data']['status'];
-    // $status = "nbjb";
+    $status = $decodedData['data']['status'];
     $tx_ref = $decodedData['data']['tx_ref'];
     $payment_type = $decodedData['data']['payment_type'];
     $customer_email = $decodedData['data']['customer']['email'];
@@ -74,20 +73,13 @@ if ($decodedData !== null) {
         $insertStmt->execute();
     }
 
-
-
-
-    $status == "successful";
-
     $query = "SELECT `status` FROM funding WHERE trx_ref = :trx_ref";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $stmt->execute();
     $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // if ($transactionData['status'] !== $status || $status == "successful") {
-
-    if ($data['data']['status'] == "successful") {
+    if ($transactionData['status'] !== $status || $status == "successful") {
 
         $trx_status = "Completed";
 
