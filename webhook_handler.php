@@ -85,7 +85,9 @@ if ($decodedData !== null) {
     $stmt->execute();
     $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($transactionData['status']  == "successful") {
+    // if ($transactionData['status'] !== $status || $status == "successful") {
+
+    if ($transactionData['status'] == "successful") {
 
         $trx_status = "Completed";
 
@@ -141,5 +143,3 @@ if ($decodedData !== null) {
 }
 
 ?>
-
-
