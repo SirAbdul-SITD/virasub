@@ -391,7 +391,7 @@ require("settings.php");
                         </td>
                         <td>
                           <?php $timestamp = $transaction['date'];
-                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s.u', $timestamp);
+                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s', $timestamp);
 
                           // Format the datetime as you desire
                           $formattedDateTime = $dateTime->format('Y-m-d H:i:s.u');
