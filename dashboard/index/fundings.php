@@ -390,8 +390,14 @@ require("settings.php");
                           </span>
                         </td>
                         <td>
-                          <?php $formattedDateTime = $transaction['status']->format('Y-m-d H:i:s.u');
-                            echo $formattedDateTime;
+                          <?php
+                          $timestamp =  $transaction['status'];
+                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s.u', $timestamp);
+                          
+                          // Format the datetime as you desire
+                          $formattedDateTime = $dateTime->format('Y-m-d H:i:s.u');
+                          
+                          echo $formattedDateTime;
                             ?>
                         </td>
                         <td>
