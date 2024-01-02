@@ -18,6 +18,7 @@ foreach ($possibleHeaderNames as $headerName) {
     }
 }
 
+
 // Replace 'YOUR_SECRET_HASH' with the actual secret hash you set
 $yourSecretHash = 'bwiuebfybwe8fg7843gr87bebf78';
 
