@@ -101,7 +101,7 @@ if ($decodedData !== null) {
         $updateStmt->bindParam(':status', $trx_status, PDO::PARAM_STR);
         $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
         $updateStmt->bindParam(':type', $payment_type, PDO::PARAM_STR);
-        $updateStmt->bindParam(':narration', $secretHashFromHeader, PDO::PARAM_STR);
+        $updateStmt->bindParam(':narration', $signature, PDO::PARAM_STR);
         $updateStmt->execute();
         
 
