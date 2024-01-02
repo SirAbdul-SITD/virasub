@@ -374,7 +374,7 @@ require("settings.php");
                   <?php foreach ($paginated_data as $transaction): ?>
                       <tr>
                         <td>
-                          <?= $index + 1; ?>
+                        <?= $row_index + 1; ?>
                         </td>
                         <td>
                           <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>
