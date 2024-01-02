@@ -63,7 +63,7 @@ if ($row) {
   $state = $row['state'];
   $type = $row['type'];
   $status = $row['status'];
-  $user_name = $row['first_name'] ." ". $row['last_name'];
+  $user_name = $row['first_name'] . ' ' . $row['last_name'];
   $_SESSION['user_balance'] = $balance;
   $public_key = 'FLWPUBK_TEST-12ebb25efcc7b39ddffd59f6ef057a68-X';
 

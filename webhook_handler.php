@@ -120,6 +120,20 @@ if ($decodedData !== null) {
         $updateStmt->execute();
 
 
+        $to = "abdulkarimhussain7@gmail.com, support@virasub.com.ng";
+      $subject = "New Balance Deposit";
+  
+      $message = "A User Just Added Funds To Their Wallet:\n\n";
+      $message .= " Transaction Reference No: $txRef";
+      $message .= " Transaction Amount: $amount";
+  
+      $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
+      $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+  
+      mail($to, $subject, $message, $headers);
+    
+
+
     } elseif ($status == "failed") {
 
         $trx_status = "Failed";

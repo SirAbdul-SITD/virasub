@@ -67,7 +67,7 @@ if ($row) {
   $state = $row['state'];
   $type = $row['type'];
   $status = $row['status'];
-  $user_name = $row['first_name'] ." ". $row['last_name'];
+  $user_name = $row['first_name'] . ' ' . $row['last_name'];
   $_SESSION['user_balance'] = $bal;
 
   if (is_null($bal)) {
