@@ -390,8 +390,9 @@ require("settings.php");
                           </span>
                         </td>
                         <td>
-                          
-                          <?= $transaction['date']; ?>
+                          <?php $formattedDateTime = $transaction['status']->format('Y-m-d H:i:s.u');
+                            echo $formattedDateTime;
+                            ?>
                         </td>
                         <td>
                           <?= $transaction['trx_ref']; ?>
