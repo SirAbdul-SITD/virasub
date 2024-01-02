@@ -87,7 +87,7 @@ if ($decodedData !== null) {
 
     // if ($transactionData['status'] !== $status || $status == "successful") {
 
-    if ($transactionData['status'] == "successful") {
+    if ($data['data']['status'] == "successful") {
 
         $trx_status = "Completed";
 
