@@ -154,7 +154,7 @@ require("settings.php");
           </li>
           <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/histories.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="History">History</div>
             </a>
 
@@ -175,7 +175,7 @@ require("settings.php");
           </li>
           <li class="menu-item">
             <a href="settings_page.php" class="menu-link">
-             <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
+              <i> <img src="icons/settings.png" style="width: 20px; margin-right: 10px;"> </i>
               <div data-i18n="Settings">Account Settings</div>
             </a>
           </li>
@@ -236,7 +236,7 @@ require("settings.php");
                             <?php echo $user_name; ?>
                           </span>
                           <small class="text-muted">Balance: ₦
-                          <?php echo number_format($balance, 2, '.', ','); ?>
+                            <?php echo number_format($balance, 2, '.', ','); ?>
                           </small>
                         </div>
                       </div>
@@ -257,7 +257,7 @@ require("settings.php");
                       <span class="align-middle">Settings</span>
                     </a>
                   </li>
-                  
+
                   <li>
                     <div class="dropdown-divider"></div>
                   </li>
@@ -320,32 +320,32 @@ require("settings.php");
                 $transactionData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-                 // Determine the current page from the query parameter, default to 1 if not set
-                 $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+                // Determine the current page from the query parameter, default to 1 if not set
+                $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-                 // Define the number of results to display per page
-                 $results_per_page = 25;
- 
-                 // Calculate the starting index for results based on the current page
-                 $start_index = ($current_page - 1) * $results_per_page;
- 
-                 // Slice the array of transactions to get the results for the current page
-                 $paginated_data = array_slice($transactionData, $start_index, $results_per_page);
- 
-                 // Initialize the index for the first row on the current page
-                 $row_index = $start_index;
- 
-                 // Calculate the total number of pages based on the paginated data
-                 $total_pages = ceil(count($transactionData) / $results_per_page);
- 
-                 // Define how many pagination links to show before and after the current page
-                 $max_links = 1;
- 
-                 // Calculate the range of pagination links to display
-                 $start_link = max($current_page, 1);
-                 $end_link = min($current_page + $max_links, $total_pages);
+                // Define the number of results to display per page
+                $results_per_page = 25;
 
-                 
+                // Calculate the starting index for results based on the current page
+                $start_index = ($current_page - 1) * $results_per_page;
+
+                // Slice the array of transactions to get the results for the current page
+                $paginated_data = array_slice($transactionData, $start_index, $results_per_page);
+
+                // Initialize the index for the first row on the current page
+                $row_index = $start_index;
+
+                // Calculate the total number of pages based on the paginated data
+                $total_pages = ceil(count($transactionData) / $results_per_page);
+
+                // Define how many pagination links to show before and after the current page
+                $max_links = 1;
+
+                // Calculate the range of pagination links to display
+                $start_link = max($current_page, 1);
+                $end_link = min($current_page + $max_links, $total_pages);
+
+
                 function getStatusClass($status)
                 {
                   if ($status === 'Completed') {
@@ -371,10 +371,10 @@ require("settings.php");
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
-                  <?php foreach ($paginated_data as $transaction): ?>
+                    <?php foreach ($paginated_data as $transaction): ?>
                       <tr>
                         <td>
-                        <?= $row_index + 1; ?>
+                          <?= $row_index + 1; ?>
                         </td>
                         <td>
                           <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>
@@ -390,10 +390,14 @@ require("settings.php");
                           </span>
                         </td>
                         <td>
-                          <?php $formattedDateTime = $transaction['date']->format('Y-m-d H:i:s.u');
-                            echo $formattedDateTime;
-                            ?>
+                          <?php $timestamp = $transaction['date'];
+                          $dateTime = DateTime::createFromFormat('Y-m-d H:i:s.u', $timestamp);
 
+                          // Format the datetime as you desire
+                          $formattedDateTime = $dateTime->format('Y-m-d H:i:s.u');
+
+                          echo $formattedDateTime;
+                          ?>
                         </td>
                         <td>
                           <?= $transaction['trx_ref']; ?>
@@ -404,8 +408,8 @@ require("settings.php");
                   </tbody>
                 </table>
 
-                 <!-- Pagination links -->
-                 <ul class="pagination" style="justify-content: right; margin: 20px;">
+                <!-- Pagination links -->
+                <ul class="pagination" style="justify-content: right; margin: 20px;">
                   <?php
                   // Generate the first pagination link
                   if ($start_link > 1) {
@@ -436,7 +440,7 @@ require("settings.php");
                   ?>
                 </ul>
 
-                
+
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
                     const filterOptions = document.querySelectorAll('.filter-option');
