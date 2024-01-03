@@ -1206,7 +1206,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                           $amount = "+{$funding['amount']}";
                           $iconClass = '';
 
-                          if ($mode === 'USSD') {
+                          if ($mode === 'ussd') {
                             $iconClass = 'mobile.png';
                           } elseif ($mode === 'Bank') {
                             $iconClass = 'bank.png';
@@ -1243,7 +1243,6 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                   </div>
                 </div>
               </div>
-
               <!--/ Transactions -->
             </div>
           </div>
