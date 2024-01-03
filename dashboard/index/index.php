@@ -1188,9 +1188,11 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                   </div>
                   <div class="card-body">
                     <?php
-                    $query = "SELECT * FROM funding WHERE user = :userEmail ORDER BY date DESC LIMIT 6";
+                    $status = "Completed";
+                    $query = "SELECT * FROM funding WHERE user = :userEmail  AND status = :status ORDER BY date DESC LIMIT 6";
                     $stmt = $pdo->prepare($query);
                     $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR);
+                    $stmt->bindParam(':status', $status, PDO::PARAM_STR);
                     $stmt->execute();
                     $fundingData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
