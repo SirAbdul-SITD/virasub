@@ -1210,9 +1210,9 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                             $iconClass = 'ussd.jpg';
                           } elseif ($mode === 'Bank') {
                             $iconClass = 'bank.jpg';
-                          } elseif ($mode === 'Credit card') {
+                          } elseif ($mode === 'card') {
                             $iconClass = 'card.jpg';
-                          } elseif ($mode === 'Bank Transfer') {
+                          } elseif ($mode === 'bank_transfer') {
                             $iconClass = 'transfer.jpg';
                           }
                           ?>
