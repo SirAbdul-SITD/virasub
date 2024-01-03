@@ -116,6 +116,8 @@ try {
     [72, '4', 'COOPERATE GIFTING', '3.0GB', '₦750.00', '30 days'],
     [73, '4', 'COOPERATE GIFTING', '5.0GB', '₦1,200.00', '30 days'],
     [74, '4', 'COOPERATE GIFTING', '10.0GB', '₦2,500.00', '30 days'],
+    [83, '1', 'GIFTING', '1.0GB', '₦255.00', '7 days'],
+    [85, '1', 'GIFTING', '3.0GB', '₦750.00', '1 Month'],
   );
 
   $strippedPrice = null;
