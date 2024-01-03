@@ -61,7 +61,7 @@ if ($row) {
 
 
 
-  if ($user_email == "muhammadbash24727@gmail.com" || $user_email == "muhammadbash24727@gmail.com") {
+  if ($user_email == "abdulkarimhussain7@gmail.com" || $user_email == "muhammadbash24727@gmail.com" || $user_email == "muhammadbash24727@gmail.com") {
 
 
     $plansData = array(
@@ -363,7 +363,7 @@ if ($row) {
     <?php
   }
 
-  
+
 } else {
   // Handle the case where no row is found
   $_SESSION['user_balance'] = 0; // Default value
