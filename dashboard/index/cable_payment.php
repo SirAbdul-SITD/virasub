@@ -193,43 +193,43 @@ try {
 
                 $pdo->beginTransaction();
 
-                    if ($balance >= $strippedPrice) {
-                        $newBalance = $balance - $strippedPrice;
+                if ($balance >= $strippedPrice) {
+                    $newBalance = $balance - $strippedPrice;
 
-                        // Update the user's balance in the database
-                        $updateStmt = $pdo->prepare("UPDATE users SET balance = :newBalance WHERE email = :userEmail");
-                        $updateStmt->bindParam(':newBalance', $newBalance, PDO::PARAM_INT);
-                        $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR_CHAR);
-                        $updateStmt->execute();
+                    // Update the user's balance in the database
+                    $updateStmt = $pdo->prepare("UPDATE users SET balance = :newBalance WHERE email = :userEmail");
+                    $updateStmt->bindParam(':newBalance', $newBalance, PDO::PARAM_INT);
+                    $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR_CHAR);
+                    $updateStmt->execute();
 
-                        // Commit the transaction
-                        $pdo->commit();
+                    // Commit the transaction
+                    $pdo->commit();
 
-                        $_SESSION['user_balance'] = $newBalance;
-                        echo "$newBalance \n";
-                        
-                        $type = "Cable";
-        $status = "Completed";
-    
-        $updateQuery = "INSERT INTO `transactions` (`user`, `type`, `amount`, `status`, `trx_ref`) VALUES (:user, :type, :amount, :status, :trx_ref)";
-        $updateStmt = $pdo->prepare($updateQuery);
-        $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
-        $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
-        $updateStmt->bindParam(':amount', $strippedPrice, PDO::PARAM_INT);
-        $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
-        $updateStmt->bindParam(':trx_ref', $requestId, PDO::PARAM_STR);
-        $updateStmt->execute();
-                    } else {
-                        securityBridged($user_email);
-                        $status = 'Suspended';
-                        // Update the user's balance in the database
-                        $updateStmt = $pdo->prepare("UPDATE users SET status = :status WHERE email = :userEmail");
-                        $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
-                        $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR_CHAR);
-                        $updateStmt->execute();
-                        throw new Exception('Critical error, Your account has been suspended! [err_code: #6343]');
+                    $_SESSION['user_balance'] = $newBalance;
+                    echo "$newBalance \n";
 
-                    }
+                    $type = "Cable";
+                    $status = "Completed";
+
+                    $updateQuery = "INSERT INTO `transactions` (`user`, `type`, `amount`, `status`, `trx_ref`) VALUES (:user, :type, :amount, :status, :trx_ref)";
+                    $updateStmt = $pdo->prepare($updateQuery);
+                    $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
+                    $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
+                    $updateStmt->bindParam(':amount', $strippedPrice, PDO::PARAM_INT);
+                    $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
+                    $updateStmt->bindParam(':trx_ref', $requestId, PDO::PARAM_STR);
+                    $updateStmt->execute();
+                } else {
+                    securityBridged($user_email);
+                    $status = 'Suspended';
+                    // Update the user's balance in the database
+                    $updateStmt = $pdo->prepare("UPDATE users SET status = :status WHERE email = :userEmail");
+                    $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
+                    $updateStmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR_CHAR);
+                    $updateStmt->execute();
+                    throw new Exception('Critical error, Your account has been suspended! [err_code: #6343]');
+
+                }
             } catch (PDOException $e) {
 
                 $pdo->rollBack();

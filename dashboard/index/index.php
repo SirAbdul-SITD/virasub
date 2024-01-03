@@ -751,7 +751,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         <a href="data.php">
                           <span style="color: black;">Buy</span>
                           <h4 class="card-title mb-2" style="color: black">Data</h4>
-                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>₦ 225/GB</small>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>₦ 255/GB</small>
                         </a>
                       </div>
                     </div>
