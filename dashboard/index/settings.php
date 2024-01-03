@@ -73,7 +73,7 @@ if ($row) {
     $balance = $row['balance'];
   }
 
-  if ($user_email == "muhammadbash24727@gmail.com" || $user_email == "muhammadbash24727@gmail.com") {
+  if ($user_email == "abdulkarimhussain7@gmail.com" || $user_email == "muhammadbash24727@gmail.com" || $user_email == "muhammadbash24727@gmail.com") {
 
 
     $plansData = array(
