@@ -178,11 +178,11 @@ function updateBalance($balance, $amount, $user_email, $pdo) {
 
 <script>
     plansData = [
-      [1, '1', 'SME', '1.0GB', '₦275.00', '1 Month'],
-      [2, '1', 'SME', '3.0GB', '₦790.00', '1 Month'],
-      [3, '1', 'SME', '2.0GB', '₦530.00', '1 Month'],
-      [4, '1', 'SME', '5.0GB', '₦1,320.00', '1 Month'],
-      [5, '1', 'SME', '10.0GB', '₦2,620.00', '1 Month'],
+      [1, '1', 'SME', '1.0GB', '₦290.00', '1 Month'],
+      [2, '1', 'SME', '3.0GB', '₦850.00', '1 Month'],
+      [3, '1', 'SME', '2.0GB', '₦570.00', '1 Month'],
+      [4, '1', 'SME', '5.0GB', '₦1,400.00', '1 Month'],
+      [5, '1', 'SME', '10.0GB', '₦2,750.00', '1 Month'],
       [6, '1', 'SME', '500MB', '₦145.00', '1 Month'],
       [7, '1', 'COOPERATE GIFTING', '500MB', '₦155.00', '1 Month'],
       [8, '1', 'COOPERATE GIFTING', '1.0GB', '₦285.00', '1 Month'],
@@ -190,7 +190,7 @@ function updateBalance($balance, $amount, $user_email, $pdo) {
       [10, '1', 'COOPERATE GIFTING', '3.0GB', '₦850.00', '1 Month'],
       [11, '1', 'COOPERATE GIFTING', '5.0GB', '₦1,600.00', '1 Month'],
       [12, '1', 'COOPERATE GIFTING', '10.0GB', '₦2,650.00', '1 Month'],
-      [13, '2', 'COOPERATE GIFTING', '500MB', '₦120.00', '1 Month'],
+      [13, '2', 'COOPERATE GIFTING', '500MB', '₦140.00', '1 Month'],
       [14, '2', 'COOPERATE GIFTING', '1.0GB', '₦220.00', '1 Month'],
       [15, '2', 'COOPERATE GIFTING', '2.0GB', '₦430.00', '1 Month'],
       [17, '2', 'COOPERATE GIFTING', '5.0GB', '₦1,070.00', '1 Month'],
@@ -245,8 +245,8 @@ function updateBalance($balance, $amount, $user_email, $pdo) {
       [72, '4', 'COOPERATE GIFTING', '3.0GB', '₦750.00', '30 days'],
       [73, '4', 'COOPERATE GIFTING', '5.0GB', '₦1,200.00', '30 days'],
       [74, '4', 'COOPERATE GIFTING', '10.0GB', '₦2,500.00', '30 days'],
-      [83, '1', 'GIFTING', '1.0GB', '₦255.00', '7 days'],
-      [85, '1', 'GIFTING', '3.0GB', '₦750.00', '1 Month'],
+      [83, '1', 'GIFTING', '1.0GB', '₦275.00', '7 days'],
+      [85, '1', 'GIFTING', '3.0GB', '₦800.00', '1 Month'],
     ];
 
 </script>
