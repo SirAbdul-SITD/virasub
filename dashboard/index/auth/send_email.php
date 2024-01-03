@@ -2,8 +2,8 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
     $email = $_POST['email'];
     $subject = "Password Reset";
-    $message = "Here is your password reset link: https://example.com/reset_password.php";
-    $headers = "From: your_email@example.com";
+    $message = "Here is your password reset link: https://virasub.com.ng/reset_password.php";
+    $headers = "From: support@virasub.com.ng";
 
     // Send the email
     $success = mail($email, $subject, $message, $headers);
