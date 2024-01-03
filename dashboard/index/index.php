@@ -1207,13 +1207,13 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                           $iconClass = '';
 
                           if ($mode === 'ussd') {
-                            $iconClass = 'mobile.png';
+                            $iconClass = 'ussd.jpg';
                           } elseif ($mode === 'Bank') {
-                            $iconClass = 'bank.png';
+                            $iconClass = 'bank.jpg';
                           } elseif ($mode === 'Credit card') {
-                            $iconClass = '../assets/img/icons/unicons/cc-success.png';
+                            $iconClass = 'card.jpg';
                           } elseif ($mode === 'Bank Transfer') {
-                            $iconClass = '../assets/img/icons/unicons/wallet.png';
+                            $iconClass = 'transfer.jpg';
                           }
                           ?>
                           <li class="d-flex mb-4 pb-1">
