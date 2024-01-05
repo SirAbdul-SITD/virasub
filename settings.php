@@ -37,10 +37,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 
 
-// $user_email = 'user2@example.com';
-$_SESSION['admin_email'] = "abdulkarimhussain7@gmail.com";
-$_SESSION['email'] = 'user2@example.com';
-$_SESSION['name'] = "Abdulkarim Hussain";
+$user_email = $_SESSION['email'] = $user['email'];
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :userEmail");
 $stmt->bindParam(':userEmail', $user_email, PDO::PARAM_STR); 
