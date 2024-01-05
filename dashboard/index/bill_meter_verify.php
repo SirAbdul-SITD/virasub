@@ -77,7 +77,7 @@ try {
         $message = $responseData['message'];
 
         // Display the results to the user
-        if ($status === 'true') {
+        if ($status === 'success') {
             // Bill payment was successful
             echo "$status \n";
             echo "$name \n";
