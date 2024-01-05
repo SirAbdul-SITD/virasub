@@ -1,4 +1,4 @@
-<?php 
+<?php
 require("config.php");
 
 if (isset($_SESSION['email'])) {
@@ -100,7 +100,7 @@ if (isset($_SESSION['email'])) {
   <script src="../../assets/js/config.js"></script>
 
   <style>
-  .popup {
+    .popup {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -132,8 +132,10 @@ if (isset($_SESSION['email'])) {
 
     body {
       margin: 0;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
+
 
     .background {
       position: absolute;
@@ -151,10 +153,11 @@ if (isset($_SESSION['email'])) {
       animation: fall var(--duration, 5s) linear infinite, rotate 10s linear infinite;
     }
 
-    input::placeholder{
+    input::placeholder {
       font-size: small;
     }
-    input{
+
+    input {
       font-size: small;
     }
 
@@ -196,8 +199,9 @@ if (isset($_SESSION['email'])) {
               <!-- Logo -->
               <div class="app-brand justify-content-center">
                 <a href="index.php" class="app-brand-link gap-2">
-                <span> <img src="../favlogo.png" style="width: 20px; margin-right:0px;"> </span>
-            <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span style="color: #fB9149">S</span style="color: #14A39A">ub</span>
+                  <span> <img src="../favlogo.png" style="width: 20px; margin-right:0px;"> </span>
+                  <span style="margin-left:0px;" class="app-brand-text demo menu-text fw-bolder ms-2">ira<span
+                      style="color: #fB9149">S</span style="color: #14A39A">ub</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -313,12 +317,12 @@ if (isset($_SESSION['email'])) {
   </script>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
 
 
-  // Function to display a popup message
-  function displayPopup(message, success) {
+    // Function to display a popup message
+    function displayPopup(message, success) {
       var popup = document.createElement('div');
       popup.className = 'popup ' + (success ? 'success' : 'error');
 
@@ -348,7 +352,7 @@ if (isset($_SESSION['email'])) {
 
         $.ajax({
           type: 'POST',
-          url: '', 
+          url: '',
           data: formData,
           dataType: 'json',
           beforeSend: function () {
@@ -357,13 +361,13 @@ if (isset($_SESSION['email'])) {
           success: function (response) {
             displayPopup(response.message, response.success);
             setTimeout(function () {
-                window.location.href = '../index.php';
-              }, 1000);
+              window.location.href = '../index.php';
+            }, 1000);
           },
           error: function (xhr) {
             console.log(xhr);
-                displayPopup('An error occurred.', false);
-            }
+            displayPopup('An error occurred.', false);
+          }
         });
       });
     });
