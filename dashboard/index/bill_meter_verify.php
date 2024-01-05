@@ -89,25 +89,23 @@ try {
         // $name = 'Abduljbar Abdulmalik';
         // $message = 'Meter Details verified!';
 
-
+        "$message \n";
         // Display the results to the user
-        if ($status === 'success') {
-            // Bill payment was successful
+        // if ($status === 'success') {
+        //     // Bill payment was successful
 
-            echo "$status \n";
-            echo "$name \n";
+        //     echo "$status \n";
+        //     echo "$name \n";
 
-            //handle error messages
-        } elseif ($status === 'false') {
-            echo "$status \n";
-            echo "$message \n";
-        } else {
-            //user input validation failed
-            sendErrorEmailToAdmin($message);
-            echo "$message \n";
-            echo "$message \n";
-            throw new Exception("[err_code: #3323]");
-        }
+        //     //handle error messages
+        // } elseif ($status === 'false') {
+        //     echo "$status \n";
+        //     echo "$message \n";
+        // } else {
+        //     //user input validation failed
+        //     sendErrorEmailToAdmin($message);
+        //     throw new Exception("[err_code: #3323]");
+        // }
 
     } else {
         // Error handling if the API call fails
