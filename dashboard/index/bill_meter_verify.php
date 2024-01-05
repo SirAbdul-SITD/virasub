@@ -79,33 +79,32 @@ try {
 
 
         // Extract relevant information from the response
-        $status = $responseData['status'];
-        $name = $responseData['name'];
-        $message = $responseData['message'];
+        // $status = $responseData['status'];
+        // $name = $responseData['name'];
+        // $message = $responseData['message'];
 
         //demo data dump
 
-        // $status = 'success';
-        // $name = 'Abduljbar Abdulmalik';
-        // $message = 'Meter Details verified!';
+        $status = 'success';
+        $name = 'Abduljbar Abdulmalik';
+        $message = 'Meter Details verified!';
 
-        "$message \n";
         // Display the results to the user
-        // if ($status === 'success') {
-        //     // Bill payment was successful
+        if ($status === 'success') {
+            // Bill payment was successful
 
-        //     echo "$status \n";
-        //     echo "$name \n";
+            echo "$status \n";
+            echo "$name \n";
 
-        //     //handle error messages
-        // } elseif ($status === 'false') {
-        //     echo "$status \n";
-        //     echo "$message \n";
-        // } else {
-        //     //user input validation failed
-        //     sendErrorEmailToAdmin($message);
-        //     throw new Exception("[err_code: #3323]");
-        // }
+            //handle error messages
+        } elseif ($status === 'false') {
+            echo "$status \n";
+            echo "$message \n";
+        } else {
+            //user input validation failed
+            sendErrorEmailToAdmin($message);
+            throw new Exception("[err_code: #3323]");
+        }
 
     } else {
         // Error handling if the API call fails
