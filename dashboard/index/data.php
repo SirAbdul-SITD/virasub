@@ -102,6 +102,7 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
 
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="plans.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain 3bal vars & default theme options, Set your preferred theme option in this file.  -->
