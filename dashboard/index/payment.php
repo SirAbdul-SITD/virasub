@@ -1,8 +1,9 @@
 <?php
 require('settings.php');
+
 try {
     // Check if all $_POST variables are set and not empty
-    $requiredPostVariables = array("amount", "page",);
+    $requiredPostVariables = array("amount", "page");
     foreach ($requiredPostVariables as $variable) {
         if (!isset($_POST[$variable]) || empty($_POST[$variable])) {
             throw new Exception("All form fields are required. [err_code: #2173]");
@@ -10,39 +11,39 @@ try {
     }
 
     // Sanitize and validate the input data
-    $amounts = (int) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_INT);
-    $page = (string) filter_input(INPUT_POST, 'page', FILTER_SANITIZE_STRING);    
+    $amounts = (float) filter_input(INPUT_POST, 'amount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $page = (string) filter_input(INPUT_POST, 'page', FILTER_SANITIZE_STRING);
 
-    if (!$amounts || $amounts <= 0 || $amounts >= 50000) {
-        throw new Exception("Invalid amount! [err_code: #8923] . $amounts");
+    if ($amounts <= 0 || $amounts >= 50000) {
+        throw new Exception("Invalid amount! [err_code: #8923]");
     }
 
-
     // Retrieve other necessary data from your preferred data store
-    $customer_email = $user_email; 
-    $tx_ref = 'Funds_' . uniqid(); 
+    $customer_email = $user_email;
+    $tx_ref = 'Funds_' . uniqid();
 
+    // Calculate the total amount (including deposit fee)
     $amount = $amounts + $deposit_fee;
-
-    // Concatenate values for hashing
-    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $public_key;
-
-    // Generate payload hash
-    $payload_hash = hash('sha256', $string_to_be_hashed);
-
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
     $logo = "https://virasub.com.ng/favlogo.png";
     $title = "ViraSub";
     $description = "Wallet Funding";
+    
+    // Concatenate values for hashing
+    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $public_key;
+
+    // Generate payload hash
+    $payload_hash = hash('sha256', $string_to_be_hashed);
+
+
+
     $customizations = array(
         "title" => $title,
         "description" => $description,
         "logo" => $logo,
     );
-
-
 
     $meta = array(
         "name" => $user_name,
@@ -51,7 +52,6 @@ try {
     $customer = array(
         "email" => $user_email,
     );
-
 
     $paymentPayload = array(
         "public_key" => $public_key,
@@ -63,12 +63,11 @@ try {
         "meta" => $meta,
         "customer" => $customer,
         "customizations" => $customizations,
-        // "payload_hash" => $payload_hash, // Include the payload hash here
+        "payload_hash" => $payload_hash, // Include the payload hash here
     );
 
     $paymentPayloadJson = json_encode($paymentPayload);
     header('Content-Type: application/json');
-
 
     $type = "USSD";
     $status = "Pending";
@@ -82,11 +81,7 @@ try {
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();
 
-
-
     echo trim($paymentPayloadJson);
-
-
 } catch (Exception $e) {
     // Catch any exceptions that occurred during the API calls or data processing
     sendErrorEmailToAdmin($e);
