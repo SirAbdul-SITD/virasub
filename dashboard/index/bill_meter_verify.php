@@ -39,7 +39,7 @@ try {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://datasub247.com/api/bill/bill-validation');
+    curl_setopt($ch, CURLOPT_URL, 'https://datasub247.com/api/bill/bill-validation?');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
