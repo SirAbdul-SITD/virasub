@@ -66,7 +66,7 @@ try {
         "meta" => $meta,
         "customer" => $customer,
         "customizations" => $customizations,
-        // "payload_hash" => $payload_hash, // Include the payload hash here
+        // // "payload_hash" => $payload_hash, // Include the payload hash here
     );
 
     $paymentPayloadJson = json_encode($paymentPayload);
