@@ -67,7 +67,7 @@ if ($row) {
   $_SESSION['user_balance'] = $balance;
 
 $deposit_fee = 30;
-$public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+$public_key = "FLWPUBK-918cdc8ecd9975a7f9116c39f6f6fe1f-X";
 $secret_key = "FLWSECK-dcc0035b7ffd3869c475e89f2091f21e-18cd9d35a4avt-X";
 
 
