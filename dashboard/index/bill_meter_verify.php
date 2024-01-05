@@ -32,16 +32,13 @@ try {
     }
     */
 
-    $payload = array(
-        'meter_number' => $meter_number,
-        'disco' => $disco_name,
-        'meter_type' => $meter_type,
-    );
+    $url = 'https://datasub247.com/api/bill/bill-validation';
+    $url .= '?meter_number=' . urlencode($meter_number);
+    $url .= '&disco=' . urlencode($disco_name);
+    $url .= '&meter_type=' . urlencode($meter_type);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://datasub247.com/api/bill/bill-validation?');
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+    curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $headers = [
         "Authorization: Token c9518a8f3a778f1524c26830f96f14c6474c0ac30438c18de6aa09a47831",
@@ -75,7 +72,6 @@ try {
         $status = $responseData['status'];
         $name = $responseData['name'];
         $message = $responseData['message'];
-
         // Display the results to the user
         if ($status === 'success') {
             // Bill payment was successful
