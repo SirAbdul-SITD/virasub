@@ -736,11 +736,11 @@
       [43, '4', 'GIFTING', '40.0GB', '₦11,500.00', '1 Month'],
       [44, '3', 'COOPERATE GIFTING', '200MB', '₦105.00', '30 days'],
       [45, '3', 'COOPERATE GIFTING', '500MB', '₦135.00', '30 days'],
-      [46, '3', 'COOPERATE GIFTING', '1.0GB', '₦240.00', '30 days'],
-      [47, '3', 'COOPERATE GIFTING', '2.0GB', '₦480.00', '30 days'],
-      [48, '3', 'COOPERATE GIFTING', '3.0GB', '₦700.00', '30 days'],
-      [49, '3', 'COOPERATE GIFTING', '5.0GB', '₦1,160.00', '30 days'],
-      [50, '3', 'COOPERATE GIFTING', '10.0GB', '₦2,320.00', '30 days'],
+      [46, '3', 'COOPERATE GIFTING', '1.0GB', '₦250.00', '30 days'],
+      [47, '3', 'COOPERATE GIFTING', '2.0GB', '₦490.00', '30 days'],
+      [48, '3', 'COOPERATE GIFTING', '3.0GB', '₦730.00', '30 days'],
+      [49, '3', 'COOPERATE GIFTING', '5.0GB', '₦1,195.00', '30 days'],
+      [50, '3', 'COOPERATE GIFTING', '10.0GB', '₦2,390.00', '30 days'],
       [51, '1', 'COOPERATE GIFTING', '15.0GB', '₦3,850.00', '30 days'],
       [53, '2', 'COOPERATE GIFTING', '20.0GB', '₦5,000.00', '30 days'],
       [54, '2', 'GIFTING', '750MB', '₦500.00', '14 Days'],
@@ -785,7 +785,7 @@
           (
             (network === '1' && planType === 'SME' || planType === 'GIFTING') ||
             (network === '2' && planType === 'COOPERATE GIFTING') ||
-            (network === '3' && planType === 'GIFTING') ||
+            (network === '3' && planType === 'COOPERATE GIFTING') ||
             (network === '4' && planType === 'COOPERATE GIFTING')
           )
         ) {
