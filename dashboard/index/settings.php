@@ -65,7 +65,11 @@ if ($row) {
   $status = $row['status'];
   $user_name = $row['first_name'] . ' ' . $row['last_name'];
   $_SESSION['user_balance'] = $balance;
-  $public_key = 'FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X';
+
+$deposit_fee = 30;
+$public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
+$secret_key = "FLWSECK-dcc0035b7ffd3869c475e89f2091f21e-18cd9d35a4avt-X";
+
 
   if (is_null($bal)) {
     $balance = "0.00";
@@ -248,10 +252,6 @@ if ($row) {
   $_SESSION['user_balance'] = 0; // Default value
 }
 
-
-$deposit_fee = 30;
-$public_key = "FLWPUBK-7629f619c8c46d8a65020bb53f1def79-X";
-$secret_key = "FLWSECK-dcc0035b7ffd3869c475e89f2091f21e-18cd9d35a4avt-X";
 
 function sendErrorEmailToAdmin($errorMessage)
 {
