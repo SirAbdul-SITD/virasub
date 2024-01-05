@@ -222,7 +222,7 @@ function updateBalance($balance, $amount, $user_email, $pdo) {
       [51, '1', 'COOPERATE GIFTING', '15.0GB', '₦3,850.00', '30 days'],
       [53, '2', 'COOPERATE GIFTING', '20.0GB', '₦5,000.00', '30 days'],
       [54, '2', 'GIFTING', '750MB', '₦500.00', '14 Days'],
-      [55, '2', 'GIFTING', '1.5GB', '₦1,030.00', '30 days'],
+      [55, '2', 'GIFTING', '1.5GB', '₦1,050.00', '30 days'],
       [56, '2', 'GIFTING', '2.0GB', '₦1,250.00', '30 days'],
       [57, '2', 'GIFTING', '3.0GB', '₦1,515.00', '30 days'],
       [58, '2', 'GIFTING', '4.5GB', '₦2,100.00', '30 days'],
