@@ -25,7 +25,7 @@ try {
     $amount = $amounts + $deposit_fee;
 
     // Concatenate values for hashing
-    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $secret_key;
+    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $public_key;
 
     // Generate payload hash
     $payload_hash = hash('sha256', $string_to_be_hashed);

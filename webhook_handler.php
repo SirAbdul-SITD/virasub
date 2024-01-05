@@ -7,7 +7,7 @@ require("settings.php");
 $webhookData = file_get_contents("php://input");
 
 // Verify the secret hash
-$secretHash = 'bwiuebfybwe8fg7843gr89y8764w345wdgchmjnj9y897tr564w42qqr9809u90hiuv54w65e876t89y89674563453354duy7bebf78'; // Replace with your actual secret hash
+$secretHash = 'bwiuebfybwe8fg7843gr89y8764w345wdgchmjnj9y897tr564w42qqr9809u90hiuv54w65e876t89y89674563453354duy7bebf78';
 $signature = isset($_SERVER['HTTP_VERIF_HASH']) ? $_SERVER['HTTP_VERIF_HASH'] : null;
 
 if (!hash_equals($secretHash, $signature)) {
@@ -49,7 +49,7 @@ if ($decodedData !== null) {
         `created_at`, `account_id`, `customer_id`, `customer_name`, 
         `customer_phone`, `customer_email`
     ) VALUES (
-        :eventStatus, :txRef, :flwRef, :deviceFingerprint, :amount, 
+        :eventStatus, :tx_ref, :flwRef, :deviceFingerprint, :amount, 
         :currency, :chargedAmount, :appFee, :merchantFee, :processorResponse, 
         :authModel, :ip, :narration, :status, :paymentType, 
         :createdAt, :accountId, :customerId, :customerName, 
@@ -60,7 +60,7 @@ if ($decodedData !== null) {
 
         // Bind parameters
         $insertStmt->bindParam(':eventStatus', $decodedData['data']['status'], PDO::PARAM_STR);
-        $insertStmt->bindParam(':txRef', $decodedData['data']['tx_ref'], PDO::PARAM_STR);
+        $insertStmt->bindParam(':tx_ref', $decodedData['data']['tx_ref'], PDO::PARAM_STR);
         $insertStmt->bindParam(':flwRef', $decodedData['data']['flw_ref'], PDO::PARAM_STR);
         $insertStmt->bindParam(':deviceFingerprint', $decodedData['data']['device_fingerprint'], PDO::PARAM_STR);
         $insertStmt->bindParam(':amount', $decodedData['data']['amount'], PDO::PARAM_INT);
@@ -124,7 +124,7 @@ if ($decodedData !== null) {
       $subject = "New Balance Deposit";
   
       $message = "A User Just Added Funds To Their Wallet:\n\n";
-      $message .= " Transaction Reference No: $txRef";
+      $message .= " Transaction Reference No: $tx_ref";
       $message .= " Transaction Amount: $amount";
   
       $headers = "From: Your App <noreply@virasub.com.ng>\r\n";
