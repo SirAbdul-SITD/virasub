@@ -29,24 +29,24 @@ try {
 
 
     // Retrieve other necessary data from your preferred data store
-    $customer_email = $user_email; 
     $tx_ref = 'Funds_' . uniqid(); 
     $user_name = "$first_name  . $last_name";
     $amount = $amounts + $deposit_fee;
-
-    // Concatenate values for hashing
-    $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $public_key;
-
-    // Generate payload hash
-    $payload_hash = hash('sha256', $string_to_be_hashed);
-
-    
     $currency = "NGN";
     $payment_options = "ussd, card";
     $redirect_url = $page;
     $logo = "https://virasub.com.ng/index/favlogo.png";
     $title = "ViraSub";
     $description = "Wallet Funding";
+
+    // Concatenate values for hashing
+    $string_to_be_hashed = $amount . $currency . $user_email . $tx_ref . $public_key;
+
+    // Generate payload hash
+    $payload_hash = hash('sha256', $string_to_be_hashed);
+
+    
+    
     $customizations = array(
         "title" => $title,
         "description" => $description,
@@ -74,7 +74,7 @@ try {
         "meta" => $meta,
         "customer" => $customer,
         "customizations" => $customizations,
-        "payload_hash" => $payload_hash, // Include the payload hash here
+        "payload_hash" => $payload_hash,
     );
 
     $paymentPayloadJson = json_encode($paymentPayload);
