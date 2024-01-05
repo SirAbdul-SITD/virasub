@@ -30,7 +30,7 @@ try {
     $logo = "https://virasub.com.ng/favlogo.png";
     $title = "ViraSub";
     $description = "Wallet Funding";
-    
+
     // Concatenate values for hashing
     $string_to_be_hashed = $amount . $currency . $customer_email . $tx_ref . $public_key;
 
@@ -63,7 +63,7 @@ try {
         "meta" => $meta,
         "customer" => $customer,
         "customizations" => $customizations,
-        "payload_hash" => $payload_hash, // Include the payload hash here
+        // "payload_hash" => $payload_hash, // Include the payload hash here
     );
 
     $paymentPayloadJson = json_encode($paymentPayload);
