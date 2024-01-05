@@ -104,6 +104,8 @@ try {
         } else {
             //user input validation failed
             sendErrorEmailToAdmin($message);
+            echo "$message \n";
+            echo "$message \n";
             throw new Exception("[err_code: #3323]");
         }
 
