@@ -394,8 +394,8 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                      <p   style="color: gold;">Unable to verify meter details at the moment! Please continue with
-                          caution.</p>
+                      <p   style="color: gold;">Unable to verify meter details. Please check your details and try again or continue with
+                          caution!</p>
                         <div style="display: flex;">
                           <b>Disco Name:</b>
                           <p id="false_USSDdisco"></p>
@@ -437,7 +437,8 @@ if (isset($_GET['tx_ref']) || $_GET['tx_ref'] === "completed") {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <p style="color: gold;">Unable to verify meter details at the moment! Please continue with caution.</p>
+                        <p style="color: gold;">Unable to verify meter details. Please check your details and try again or continue with
+                          caution!</p>
 
                                                  <div style="display: flex;">
                           <b>Disco Name:</b>
