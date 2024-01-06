@@ -24,7 +24,7 @@ try {
     }
 
     // Retrieve other necessary data from your preferred data store
-    $tx_ref = 'Funds_' . uniqid();
+    $tx_ref = 'Data_' . uniqid();
     $user_name = "$first_name $last_name";
     $amount += $deposit_fee;
     $currency = "NGN";
@@ -71,20 +71,22 @@ try {
     header('Content-Type: application/json');
 
     // Insert transaction data into the database
-    $type = "USSD";
-    $status = "Pending";
+    $type = "Data";
+    $status = "Failed";
+    $fee = 30;
 
-    $updateQuery = "INSERT INTO `transactions` (`user`, `type`, `amount`, `status`, `trx_ref`) VALUES (:user, :type, :amount, :status, :trx_ref)";
+    $updateQuery = "INSERT INTO `transactions` (`user`, `type`, `amount`, `status`, `trx_ref`, `fee`) VALUES (:user, :type, :amount, :status, :trx_ref, :fee)";
     $updateStmt = $pdo->prepare($updateQuery);
     $updateStmt->bindParam(':user', $user_email, PDO::PARAM_STR);
     $updateStmt->bindParam(':type', $type, PDO::PARAM_STR);
     $updateStmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+    $updateStmt->bindParam(':fee', $fee, PDO::PARAM_INT);
     $updateStmt->bindParam(':status', $status, PDO::PARAM_STR);
     $updateStmt->bindParam(':trx_ref', $tx_ref, PDO::PARAM_STR);
     $updateStmt->execute();
 
-    $type = "USSD";
-    $status = "Pending";
+    $type = "Data";
+    $status = "Failed";
 
     $updateQuery = "INSERT INTO `init_transactions` (`first_name`, `last_name`, `user`, `type`, `amount`, `status`, `phone`, `plan`, `network`, `trx_ref`) VALUES (:first_name, :last_name, :user, :type, :amount, :status, :phone, :plan, :network, :trx_ref)";
     $updateStmt = $pdo->prepare($updateQuery);
