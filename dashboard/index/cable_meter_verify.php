@@ -73,12 +73,21 @@ try {
         $name = $responseData['name'];
         $message = $responseData['message'];
 
-        if ($status === 'success') {
+          // Display the results to the user
+          if ($status === 'success') {
+            // Bill payment was successful
+
             echo "$status \n";
             echo "$name \n";
-        } else {
+
+            //handle error messages
+        } elseif ($status !== 'success') {
             echo "$status \n";
             echo "$message \n";
+        } else {
+            //user input validation failed
+            sendErrorEmailToAdmin($message);
+            throw new Exception("[err_code: #3323] $response");
         }
     } else {
         $error = "The code for processing API calls failed. Please confirm all services are working fine.  [err_code: #3273]";
